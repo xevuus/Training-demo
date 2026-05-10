@@ -622,7 +622,24 @@ function calcVDOT(distM,timeSec){
 function predictTimeFromVDOT(vdot,distM){
   let lo=20,hi=200000;
   for(let i=0;i<80;i++){const mid=(lo+hi)/2;if(calcVDOT(distM,mid)>vdot)lo=mid;else hi=mid;}
-  return(lo+hi)/2;
+  const rawSecs=(lo+hi)/2;
+  // v5: distance-specific correction factors
+  // Short distances: anaerobic contribution makes them faster than pure VDOT predicts
+  // 5K-10K: sweet spot, no adjustment
+  // Long distances: fatigue accumulates more than the formula assumes, pull back
+  let factor=1.0;
+  if(distM<=400)        factor=0.94;
+  else if(distM<=800)   factor=0.96;
+  else if(distM<=1500)  factor=0.97;
+  else if(distM<=1609)  factor=0.975;
+  else if(distM<=3000)  factor=0.985;
+  else if(distM<=5000)  factor=1.0;
+  else if(distM<=10000) factor=1.0;
+  else if(distM<=15000) factor=1.015;
+  else if(distM<=21097) factor=1.03;
+  else if(distM<=30000) factor=1.055;
+  else                  factor=1.08;
+  return rawSecs*factor;
 }
 
 // v4: sweet-spot calibration
@@ -781,7 +798,8 @@ function renderVO2Timeline(vdot,phase){
   const maxV=Math.max(...allVals)+5;
   const W=700,H=140,padL=40,padR=10,padT=10,padB=30;
   const xScale=(i)=>padL+(i/(allPoints.length-1))*(W-padL-padR);
-  const yScale=(v)=>padT+(1-(v-minV)/(maxV-minV))*(H-padT-padB);
+  // Higher VDOT = smaller Y value (higher on screen) — correct orientation
+  const yScale=(v)=>padT+((maxV-v)/(maxV-minV))*(H-padT-padB);
 
   // Build path for history
   const histPts=allPoints.filter(p=>!p.projected);
