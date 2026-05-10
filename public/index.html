@@ -15,8 +15,6 @@
 }
 body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 .screen{display:none;}.screen.active{display:block;}
-
-/* CONNECT */
 #connect-screen{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:2rem;position:relative;overflow:hidden;}
 #connect-screen.active{display:flex;}
 .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(252,76,2,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(252,76,2,0.04) 1px,transparent 1px);background-size:48px 48px;z-index:0;}
@@ -32,16 +30,12 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border);margin-top:0.75rem;}
 .error-box{background:rgba(229,57,53,0.1);border:1px solid rgba(229,57,53,0.3);border-radius:8px;padding:10px 14px;font-size:0.78rem;color:#ef9a9a;margin-bottom:1rem;display:none;}
 .divider{border-top:1px solid var(--border);margin:1.5rem 0;}
-
-/* LOADING */
 .loading-overlay{position:fixed;inset:0;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:1000;gap:1rem;}
 .loading-overlay.active{display:flex;}
 .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--orange);border-radius:50%;animation:spin 0.8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .loading-text{font-size:0.85rem;color:var(--muted);font-family:'DM Mono',monospace;}
 .loading-detail{font-size:0.72rem;color:var(--muted);opacity:0.5;font-family:'DM Mono',monospace;}
-
-/* TOPBAR */
 .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
 .topbar-left{display:flex;align-items:center;gap:12px;}
 .topbar-logo{background:var(--orange);color:white;border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;font-family:'DM Mono',monospace;flex-shrink:0;}
@@ -54,16 +48,12 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .unit-toggle{display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
 .unit-btn{padding:5px 12px;font-size:0.75rem;font-family:'DM Mono',monospace;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all 0.15s;}
 .unit-btn.active{background:var(--orange);color:white;}
-.nav-tabs{display:flex;gap:2px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:3px;}
-.nav-tab{padding:6px 14px;font-size:0.78rem;font-family:'DM Mono',monospace;cursor:pointer;border:none;background:transparent;color:var(--muted);border-radius:7px;transition:all 0.15s;white-space:nowrap;}
+.nav-tabs{display:flex;gap:2px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:3px;flex-wrap:wrap;}
+.nav-tab{padding:6px 12px;font-size:0.76rem;font-family:'DM Mono',monospace;cursor:pointer;border:none;background:transparent;color:var(--muted);border-radius:7px;transition:all 0.15s;white-space:nowrap;}
 .nav-tab.active{background:var(--surface);color:var(--text);}
-
-/* DASHBOARD */
 .dashboard-body{padding:1.5rem;max-width:1100px;margin:0 auto;}
 .tab-panel{display:none;}.tab-panel.active{display:block;}
 .demo-notice{background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:8px 14px;font-size:0.75rem;color:var(--amber);margin-bottom:1.2rem;font-family:'DM Mono',monospace;}
-
-/* TRAINING PHASE */
 .status-banner{border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border:1px solid;}
 .status-banner.base{background:rgba(74,158,255,0.08);border-color:rgba(74,158,255,0.25);}
 .status-banner.threshold{background:rgba(245,166,35,0.08);border-color:rgba(245,166,35,0.25);}
@@ -79,8 +69,6 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .status-metric{text-align:center;}
 .status-metric-val{font-size:1rem;font-weight:600;font-family:'DM Mono',monospace;}
 .status-metric-lbl{font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.05em;margin-top:2px;}
-
-/* STAT CARDS */
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:1.5rem;}
 .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;position:relative;overflow:hidden;}
 .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,var(--orange));}
@@ -89,8 +77,6 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .stat-sub{font-size:0.7rem;color:var(--muted);margin-top:4px;}
 .stat-card.green{--accent:var(--green);}.stat-card.blue{--accent:var(--blue);}
 .stat-card.amber{--accent:var(--amber);}.stat-card.purple{--accent:var(--purple);}
-
-/* CHARTS */
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
 @media(max-width:640px){.charts-grid{grid-template-columns:1fr;}}
 .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem;}
@@ -98,8 +84,7 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .bar-chart{display:flex;align-items:flex-end;gap:6px;height:100px;}
 .bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;}
 .bar{width:100%;border-radius:4px 4px 0 0;background:var(--orange-dim);transition:height 0.6s cubic-bezier(.34,1.56,.64,1);min-height:4px;}
-.bar.active{background:var(--orange);}
-.bar.peak{background:rgba(168,85,247,0.5);}
+.bar.active{background:var(--orange);}.bar.peak{background:rgba(168,85,247,0.5);}
 .pace-chart{display:flex;align-items:flex-end;gap:4px;height:80px;}
 .pace-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;}
 .pace-bar{width:100%;border-radius:3px 3px 0 0;background:var(--blue);opacity:0.7;}
@@ -111,18 +96,31 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .zone-bar-fill{height:100%;border-radius:999px;transition:width 0.8s ease;}
 .zone-pct{font-size:0.66rem;color:var(--muted);width:32px;text-align:right;font-family:'DM Mono',monospace;}
 
-/* VDOT */
+/* VDOT HEADER */
 .vdot-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem;flex-wrap:wrap;gap:8px;}
 .vdot-score{background:var(--orange-dim);border:1px solid rgba(252,76,2,0.2);border-radius:10px;padding:6px 14px;text-align:center;}
 .vdot-val{font-size:1.4rem;font-weight:700;color:var(--orange);font-family:'DM Mono',monospace;}
 .vdot-lbl{font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;}
-.predictor-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.pred-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem;}
-.pred-race{font-size:0.66rem;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:4px;}
-.pred-time{font-size:1.1rem;font-weight:600;}
-.pred-pace{font-size:0.68rem;color:var(--muted);margin-top:2px;font-family:'DM Mono',monospace;}
 
-/* VO2/LT */
+/* FULL RACE PREDICTIONS TABLE */
+.race-table{width:100%;border-collapse:collapse;}
+.race-table th{font-size:0.62rem;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);}
+.race-table td{padding:8px 10px;font-size:0.82rem;border-bottom:1px solid rgba(255,255,255,0.04);}
+.race-table tr:last-child td{border-bottom:none;}
+.race-table tr:hover td{background:var(--surface2);}
+.race-table td:first-child{font-family:'DM Mono',monospace;color:var(--muted);font-size:0.75rem;}
+.race-table td:nth-child(2){font-weight:600;}
+.race-table td:nth-child(3){font-family:'DM Mono',monospace;font-size:0.76rem;color:var(--muted);}
+.race-section-header{font-size:0.62rem;font-family:'DM Mono',monospace;color:var(--orange);text-transform:uppercase;letter-spacing:0.08em;padding:10px 10px 4px;background:rgba(252,76,2,0.04);}
+
+/* VO2 OVER TIME CHART */
+.vo2-chart-wrap{position:relative;height:160px;margin-bottom:0.5rem;}
+.vo2-svg{width:100%;height:100%;}
+.vo2-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;}
+.vo2-legend-item{display:flex;align-items:center;gap:6px;font-size:0.66rem;color:var(--muted);font-family:'DM Mono',monospace;}
+.vo2-legend-dot{width:10px;height:3px;border-radius:2px;}
+
+/* PERF */
 .perf-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
 @media(max-width:600px){.perf-grid{grid-template-columns:1fr;}}
 .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem;}
@@ -138,11 +136,41 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .test-name{font-size:0.9rem;font-weight:600;margin-bottom:3px;}
 .test-detail{font-size:0.75rem;color:var(--muted);line-height:1.5;}
 
+/* RACE PLANNER */
+.planner-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1.5rem;}
+.planner-card h3{font-size:0.72rem;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:1.2rem;}
+.planner-inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:1rem;}
+@media(max-width:600px){.planner-inputs{grid-template-columns:1fr 1fr;}}
+.planner-group{display:flex;flex-direction:column;gap:6px;}
+.planner-label{font-size:0.72rem;color:var(--muted);font-family:'DM Mono',monospace;}
+.planner-input{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:0.88rem;color:var(--text);font-family:'Sora',sans-serif;outline:none;width:100%;}
+.planner-input:focus{border-color:var(--orange);}
+.planner-select{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:0.88rem;color:var(--text);font-family:'Sora',sans-serif;outline:none;width:100%;cursor:pointer;}
+.planner-select:focus{border-color:var(--orange);}
+.btn-plan{background:var(--orange);color:white;border:none;border-radius:8px;padding:10px 24px;font-size:0.85rem;font-weight:600;font-family:'Sora',sans-serif;cursor:pointer;margin-top:0.5rem;}
+.btn-plan:hover{opacity:0.9;}
+.plan-result{margin-top:1.4rem;display:none;}
+.plan-result.show{display:block;}
+.plan-result-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:1rem;}
+.plan-result-title{font-size:1rem;font-weight:600;}
+.goal-feasibility{border-radius:8px;padding:6px 14px;font-size:0.75rem;font-weight:600;font-family:'DM Mono',monospace;}
+.goal-feasibility.achievable{background:rgba(39,201,111,0.12);color:var(--green);}
+.goal-feasibility.stretch{background:rgba(245,166,35,0.12);color:var(--amber);}
+.goal-feasibility.aggressive{background:rgba(229,57,53,0.12);color:var(--red);}
+.phase-timeline{display:flex;gap:0;margin-bottom:1.2rem;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+.phase-block{flex:1;padding:8px 10px;text-align:center;border-right:1px solid var(--border);}
+.phase-block:last-child{border-right:none;}
+.phase-block.active-phase{background:var(--orange-dim);}
+.phase-block-name{font-size:0.62rem;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;margin-bottom:3px;}
+.phase-block-weeks{font-size:0.85rem;font-weight:600;}
+.phase-block-desc{font-size:0.6rem;color:var(--muted);margin-top:2px;}
+.planner-insights{font-size:0.82rem;color:var(--muted);line-height:1.7;}
+.planner-insights strong{color:var(--text);}
+
 /* WEEKLY PLAN */
 .plan-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1.5rem;}
 .plan-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;flex-wrap:wrap;}
 .plan-badge{background:rgba(39,201,111,0.12);color:var(--green);border-radius:6px;padding:3px 10px;font-size:0.68rem;font-weight:600;font-family:'DM Mono',monospace;}
-.plan-meta{font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;}
 .plan-days{display:flex;flex-direction:column;gap:10px;}
 .plan-day{background:var(--surface2);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
 .plan-day-header{display:flex;align-items:center;gap:12px;padding:0.85rem 1rem;cursor:pointer;user-select:none;}
@@ -152,19 +180,16 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .plan-day-name{font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
 .plan-day-type{font-size:0.95rem;font-weight:600;margin-top:1px;}
 .plan-day-summary{font-size:0.75rem;color:var(--muted);}
-.plan-day-expand{font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;flex-shrink:0;}
 .plan-day-body{padding:0 1rem 1rem;display:none;}
 .plan-day-body.open{display:block;}
 .plan-section{margin-bottom:0.7rem;}
 .plan-section-label{font-size:0.65rem;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;}
 .plan-section-text{font-size:0.82rem;color:var(--text);line-height:1.6;}
-.plan-section-text strong{color:var(--orange);}
 .intensity-bar{display:flex;gap:3px;margin-top:6px;}
 .intensity-dot{width:8px;height:8px;border-radius:50%;background:var(--surface);}
 .intensity-dot.filled{background:var(--orange);}
 .intensity-dot.filled.easy{background:var(--green);}
 .intensity-dot.filled.hard{background:var(--red);}
-.plan-loading{font-size:0.85rem;color:var(--muted);font-style:italic;padding:0.5rem 0;}
 
 /* AI */
 .ai-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:1.5rem;}
@@ -210,10 +235,7 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .setting-input:focus{border-color:var(--orange);}
 .setting-hint{font-size:0.68rem;color:var(--muted);opacity:0.7;}
 .btn-save{background:var(--orange);color:white;border:none;border-radius:8px;padding:10px 24px;font-size:0.85rem;font-weight:600;font-family:'Sora',sans-serif;cursor:pointer;margin-top:1rem;}
-.btn-save:hover{opacity:0.9;}
-.zone-preview{margin-top:1.2rem;}
-.zone-preview-title{font-size:0.68rem;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.8rem;}
-.zone-preview-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.zone-preview-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:1rem;}
 .zone-box{border-radius:8px;padding:0.6rem;text-align:center;border:1px solid;}
 .zone-box-name{font-size:0.62rem;font-family:'DM Mono',monospace;margin-bottom:3px;}
 .zone-box-range{font-size:0.75rem;font-weight:600;font-family:'DM Mono',monospace;}
@@ -236,9 +258,9 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
     <h1>Training Analyzer</h1>
     <p>Connect your Strava account for AI-powered analysis of your performance, training load, and race predictions.</p>
     <div class="feature-pills">
-      <span class="pill">📈 Performance trends</span>
-      <span class="pill">🔥 Training load</span>
-      <span class="pill">🏁 VDOT predictions</span>
+      <span class="pill">📈 VO2 over time</span>
+      <span class="pill">🏁 Full race predictions</span>
+      <span class="pill">🎯 Race goal planner</span>
       <span class="pill">🤖 AI coaching</span>
     </div>
     <div class="error-box" id="error-box"></div>
@@ -259,7 +281,9 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
     <div class="topbar-right">
       <div class="nav-tabs">
         <button class="nav-tab active" onclick="switchTab('overview',this)">Overview</button>
+        <button class="nav-tab" onclick="switchTab('predictions',this)">Predictions</button>
         <button class="nav-tab" onclick="switchTab('performance',this)">Performance</button>
+        <button class="nav-tab" onclick="switchTab('planner',this)">Race Planner</button>
         <button class="nav-tab" onclick="switchTab('activities',this)">Activities</button>
         <button class="nav-tab" onclick="switchTab('settings',this)">Settings</button>
       </div>
@@ -291,23 +315,21 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
         </div>
         <div class="status-metrics" id="status-metrics"></div>
       </div>
-
       <div class="stat-grid">
         <div class="stat-card"><div class="stat-label">This week</div><div class="stat-value" id="stat-dist">—</div><div class="stat-sub" id="stat-dist-sub">mi</div></div>
         <div class="stat-card green"><div class="stat-label">Avg run pace</div><div class="stat-value" id="stat-pace">—</div><div class="stat-sub" id="stat-pace-sub">min/mi</div></div>
         <div class="stat-card blue"><div class="stat-label">Training load</div><div class="stat-value" id="stat-load">—</div><div class="stat-sub">ATL 7-day</div></div>
         <div class="stat-card amber"><div class="stat-label">Last 30 days</div><div class="stat-value" id="stat-acts">—</div><div class="stat-sub">activities</div></div>
-        <div class="stat-card purple"><div class="stat-label">Total loaded</div><div class="stat-value" id="stat-total">—</div><div class="stat-sub">activities</div></div>
+        <div class="stat-card purple"><div class="stat-label">VDOT</div><div class="stat-value" id="stat-vdot">—</div><div class="stat-sub">current fitness</div></div>
       </div>
-
       <div class="charts-grid">
         <div class="chart-card">
-          <div class="chart-title" id="vol-title">Weekly volume (mi) — last 8 weeks</div>
+          <div class="chart-title" id="vol-title">Weekly volume (mi)</div>
           <div class="bar-chart" id="volume-chart"></div>
           <div style="display:flex;gap:4px;margin-top:10px;" id="volume-labels"></div>
           <div style="display:flex;gap:12px;margin-top:8px;align-items:center;">
             <div style="width:10px;height:10px;background:var(--orange);border-radius:2px;"></div>
-            <span style="font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;">Current week</span>
+            <span style="font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;">Current</span>
             <div style="width:10px;height:10px;background:rgba(168,85,247,0.5);border-radius:2px;margin-left:8px;"></div>
             <span style="font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;">Peak week</span>
           </div>
@@ -328,25 +350,19 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
         </div>
         <div class="chart-card">
           <div class="vdot-header">
-            <div class="chart-title" style="margin-bottom:0;">VDOT Race Predictions</div>
+            <div class="chart-title" style="margin-bottom:0;">Key Race Predictions</div>
             <div class="vdot-score"><div class="vdot-val" id="vdot-score">—</div><div class="vdot-lbl">VDOT</div></div>
           </div>
-          <div class="predictor-grid" id="predictor"></div>
+          <div id="predictor-overview"></div>
         </div>
       </div>
-
-      <!-- WEEKLY PLAN -->
       <div class="plan-card" id="plan-card">
         <div class="plan-header">
           <div class="plan-badge">THIS WEEK'S PLAN</div>
-          <span class="plan-meta" id="plan-meta">AI recommended · based on your VDOT & training phase</span>
+          <span style="font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;">AI recommended · based on your VDOT &amp; training phase</span>
         </div>
-        <div class="plan-days" id="plan-days">
-          <div class="plan-loading">Building your personalized training plan...</div>
-        </div>
+        <div class="plan-days" id="plan-days"><div style="font-size:0.85rem;color:var(--muted);">Building your personalized training plan...</div></div>
       </div>
-
-      <!-- AI COACH -->
       <div class="ai-panel">
         <div class="ai-panel-header">
           <div class="ai-badge">AI COACH</div>
@@ -360,6 +376,18 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
       </div>
     </div>
 
+    <!-- PREDICTIONS TAB -->
+    <div class="tab-panel" id="tab-predictions">
+      <div class="chart-card" style="margin-bottom:1.5rem;">
+        <div class="vdot-header" style="margin-bottom:1rem;">
+          <div class="chart-title" style="margin-bottom:0;">All Race Distance Predictions</div>
+          <div class="vdot-score"><div class="vdot-val" id="vdot-score-pred">—</div><div class="vdot-lbl">VDOT</div></div>
+        </div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:1rem;line-height:1.5;" id="vdot-explanation"></div>
+        <div id="full-race-table"></div>
+      </div>
+    </div>
+
     <!-- PERFORMANCE TAB -->
     <div class="tab-panel" id="tab-performance">
       <div class="perf-grid">
@@ -368,38 +396,91 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
           <div class="perf-main" id="vo2-val" style="color:var(--blue);">—</div>
           <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.5rem;">ml/kg/min</div>
           <div class="perf-badge blue" id="vo2-badge">Calculating...</div>
-          <div class="perf-sub" id="vo2-desc">Based on your best recent efforts using the Daniels/Gilbert method.</div>
+          <div class="perf-sub" id="vo2-desc">Based on best recent efforts.</div>
           <div class="test-workout">
             <div class="test-label">🧪 Get a more accurate reading</div>
             <div class="test-name">Cooper 12-Minute Test</div>
-            <div class="test-detail">Run as far as possible in 12 minutes on a flat surface. VO2max ≈ (distance in meters − 504.9) / 44.73</div>
+            <div class="test-detail">Run as far as possible in 12 min on flat ground. VO2max ≈ (meters − 504.9) / 44.73</div>
           </div>
         </div>
         <div class="perf-card">
-          <div class="perf-title">Lactate Threshold Estimate</div>
+          <div class="perf-title">Lactate Threshold</div>
           <div class="perf-main" id="lt-val" style="color:var(--amber);">—</div>
           <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.5rem;" id="lt-unit">min/mi</div>
           <div class="perf-badge amber" id="lt-badge">Calculating...</div>
-          <div class="perf-sub" id="lt-desc">LT pace is typically the pace you can hold for ~60 min at max sustainable effort.</div>
+          <div class="perf-sub" id="lt-desc">The pace you can hold for ~60 min at maximum sustainable effort.</div>
           <div class="test-workout">
             <div class="test-label">🧪 Get a more accurate reading</div>
             <div class="test-name">30-Minute Time Trial</div>
-            <div class="test-detail">Warm up 10 min, run 30 min at max sustainable pace. Average pace = LT pace. Average HR = LT heart rate.</div>
+            <div class="test-detail">Warm up 10 min, run 30 min all-out. Avg pace = LT pace. Avg HR = LT heart rate.</div>
           </div>
         </div>
+      </div>
+      <!-- VO2 OVER TIME -->
+      <div class="chart-card" style="margin-bottom:1.5rem;">
+        <div class="chart-title">VO2 Max Over Time — Past &amp; Projected</div>
+        <div class="vo2-chart-wrap">
+          <svg class="vo2-svg" id="vo2-timeline-svg" viewBox="0 0 700 160" preserveAspectRatio="none"></svg>
+        </div>
+        <div class="vo2-legend">
+          <div class="vo2-legend-item"><div class="vo2-legend-dot" style="background:var(--blue);"></div>Historical VDOT</div>
+          <div class="vo2-legend-item"><div class="vo2-legend-dot" style="background:var(--orange);width:20px;"></div>Current</div>
+          <div class="vo2-legend-item"><div class="vo2-legend-dot" style="background:var(--green);border:1px dashed var(--green);"></div>Projected</div>
+        </div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.8rem;line-height:1.6;" id="vo2-trend-desc"></div>
       </div>
       <div class="chart-card" style="margin-bottom:1.5rem;">
         <div class="chart-title">HR Zone Distribution — all runs</div>
         <div class="zone-grid" id="zone-chart-perf"></div>
         <div style="font-size:0.72rem;color:var(--muted);margin-top:1rem;line-height:1.6;" id="zone-advice"></div>
       </div>
-      <div class="chart-card" style="margin-bottom:1.5rem;">
-        <div class="vdot-header" style="margin-bottom:1rem;">
-          <div class="chart-title" style="margin-bottom:0;">VDOT Race Predictions — full detail</div>
-          <div class="vdot-score"><div class="vdot-val" id="vdot-score-2">—</div><div class="vdot-lbl">VDOT</div></div>
+    </div>
+
+    <!-- RACE PLANNER TAB -->
+    <div class="tab-panel" id="tab-planner">
+      <div class="planner-card">
+        <h3>🎯 Race Goal Planner</h3>
+        <div class="planner-inputs">
+          <div class="planner-group">
+            <label class="planner-label">Race Distance</label>
+            <select class="planner-select" id="planner-dist">
+              <option value="400">400 meters</option>
+              <option value="800">800 meters</option>
+              <option value="1000">1 kilometer</option>
+              <option value="1500">1500 meters</option>
+              <option value="1609">1 mile</option>
+              <option value="3000">3K</option>
+              <option value="3219">2 mile</option>
+              <option value="5000" selected>5K</option>
+              <option value="8000">8K</option>
+              <option value="10000">10K</option>
+              <option value="12000">12K</option>
+              <option value="15000">15K</option>
+              <option value="16093">10 mile</option>
+              <option value="21097">Half Marathon</option>
+              <option value="25000">25K</option>
+              <option value="30000">30K</option>
+              <option value="42195">Marathon</option>
+            </select>
+          </div>
+          <div class="planner-group">
+            <label class="planner-label">Goal Time (hh:mm:ss or mm:ss)</label>
+            <input class="planner-input" type="text" id="planner-goal" placeholder="e.g. 22:30 or 3:45:00"/>
+          </div>
+          <div class="planner-group">
+            <label class="planner-label">Race Date</label>
+            <input class="planner-input" type="date" id="planner-date"/>
+          </div>
         </div>
-        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:1rem;line-height:1.5;" id="vdot-explanation"></div>
-        <div class="predictor-grid" id="predictor-detail" style="grid-template-columns:repeat(3,1fr);"></div>
+        <button class="btn-plan" onclick="generateRacePlan()">Build My Race Plan →</button>
+        <div class="plan-result" id="plan-result">
+          <div class="plan-result-header">
+            <div class="plan-result-title" id="plan-result-title">Race Plan</div>
+            <div class="goal-feasibility" id="goal-feasibility">Analyzing...</div>
+          </div>
+          <div class="phase-timeline" id="phase-timeline"></div>
+          <div class="planner-insights" id="planner-insights"></div>
+        </div>
       </div>
     </div>
 
@@ -420,44 +501,15 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
       <div class="settings-card">
         <h3>Heart Rate Zones — Karvonen Method</h3>
         <div class="settings-grid">
-          <div class="setting-group">
-            <label class="setting-label">Age</label>
-            <input class="setting-input" type="number" id="setting-age" placeholder="e.g. 30" min="10" max="90"/>
-            <span class="setting-hint">Used to estimate max HR (220 − age)</span>
-          </div>
-          <div class="setting-group">
-            <label class="setting-label">Resting Heart Rate (bpm)</label>
-            <input class="setting-input" type="number" id="setting-rhr" placeholder="e.g. 55" min="30" max="100"/>
-            <span class="setting-hint">Measure first thing in the morning</span>
-          </div>
-          <div class="setting-group">
-            <label class="setting-label">Max Heart Rate (bpm) — optional</label>
-            <input class="setting-input" type="number" id="setting-mhr" placeholder="Leave blank to use 220−age" min="100" max="220"/>
-            <span class="setting-hint">Override the estimate if you know your actual max HR</span>
-          </div>
-          <div class="setting-group">
-            <label class="setting-label">Weight (lbs)</label>
-            <input class="setting-input" type="number" id="setting-weight" placeholder="e.g. 160" min="50" max="400"/>
-            <span class="setting-hint">Optional, used for VO2 max context</span>
-          </div>
+          <div class="setting-group"><label class="setting-label">Age</label><input class="setting-input" type="number" id="setting-age" placeholder="e.g. 30"/><span class="setting-hint">Used to estimate max HR (220 − age)</span></div>
+          <div class="setting-group"><label class="setting-label">Resting HR (bpm)</label><input class="setting-input" type="number" id="setting-rhr" placeholder="e.g. 55"/><span class="setting-hint">Measure first thing in the morning</span></div>
+          <div class="setting-group"><label class="setting-label">Max HR (bpm) — optional</label><input class="setting-input" type="number" id="setting-mhr" placeholder="Leave blank for 220−age"/></div>
+          <div class="setting-group"><label class="setting-label">Weight (lbs) — optional</label><input class="setting-input" type="number" id="setting-weight" placeholder="e.g. 160"/></div>
         </div>
         <button class="btn-save" onclick="saveSettings()">Save & Recalculate →</button>
-        <div class="save-notice" id="save-notice">✓ Saved! All zones and analysis updated.</div>
-        <div class="zone-preview" id="zone-preview" style="margin-top:1.2rem;">
-          <div class="zone-preview-title">Your HR Zones (preview)</div>
-          <div class="zone-preview-grid" id="zone-preview-grid"></div>
-        </div>
-      </div>
-      <div class="settings-card">
-        <h3>About HR Zone Calculation</h3>
-        <p style="font-size:0.82rem;color:var(--muted);line-height:1.8;">
-          The <strong style="color:var(--text);">Karvonen formula</strong> uses your Heart Rate Reserve (Max HR − Resting HR) to give personalized zones.<br><br>
-          <strong style="color:var(--text);">Z1</strong> (50–60% HRR) — Recovery &nbsp;|&nbsp;
-          <strong style="color:var(--text);">Z2</strong> (60–70%) — Aerobic base &nbsp;|&nbsp;
-          <strong style="color:var(--text);">Z3</strong> (70–80%) — Tempo &nbsp;|&nbsp;
-          <strong style="color:var(--text);">Z4</strong> (80–90%) — Threshold &nbsp;|&nbsp;
-          <strong style="color:var(--text);">Z5</strong> (90–100%) — VO2max
-        </p>
+        <div class="save-notice" id="save-notice">✓ Saved!</div>
+        <div style="font-size:0.68rem;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:1.2rem;margin-bottom:0.8rem;">Your HR Zones</div>
+        <div class="zone-preview-grid" id="zone-preview-grid"></div>
       </div>
     </div>
   </div>
@@ -476,37 +528,23 @@ const $=id=>document.getElementById(id);
 
 // ── UNITS ──
 function mToDisplay(m){return useImperial?(m/1609.34).toFixed(1):(m/1000).toFixed(1);}
-function mToRaw(m){return useImperial?m/1609.34:m/1000;}
 function distUnit(){return useImperial?'mi':'km';}
 function paceUnit(){return useImperial?'min/mi':'min/km';}
-function speedToPace(mps){
-  if(!mps||mps<=0)return'—';
-  const f=useImperial?1609.34:1000;
-  const s=f/mps;const m=Math.floor(s/60),sec=Math.round(s%60);
-  return`${m}:${sec.toString().padStart(2,'0')}`;
-}
+function speedToPace(mps){if(!mps||mps<=0)return'—';const f=useImperial?1609.34:1000;const s=f/mps;const m=Math.floor(s/60),sec=Math.round(s%60);return`${m}:${sec.toString().padStart(2,'0')}`;}
 function speedToRide(mps){return useImperial?(mps*2.23694).toFixed(1)+' mph':(mps*3.6).toFixed(1)+' kph';}
 function secToHMS(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=Math.round(s%60);return h>0?`${h}:${m.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`:`${m}:${sec.toString().padStart(2,'0')}`;}
+function parseGoalTime(str){if(!str)return 0;const p=str.trim().split(':').map(Number);if(p.length===3)return p[0]*3600+p[1]*60+p[2];if(p.length===2)return p[0]*60+p[1];return Number(p[0])||0;}
 function fmtDate(iso){return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric'});}
 function nameInitials(n){return n.split(' ').filter(Boolean).map(w=>w[0]).join('').toUpperCase().slice(0,2);}
 function setUnits(u){useImperial=u==='imperial';$('btn-imperial').classList.toggle('active',useImperial);$('btn-metric').classList.toggle('active',!useImperial);if(activitiesData.length)renderAll(localStorage.getItem('strava_athlete')||'Athlete');}
 
-// ── HR ZONES (Karvonen) ──
+// ── HR ZONES ──
 function computeZones(age,rhr,mhrOverride){
-  const maxHR=mhrOverride||(220-age);
-  const hrr=maxHR-rhr;
+  const maxHR=mhrOverride||(220-age);const hrr=maxHR-rhr;
   const z=(lo,hi)=>[Math.round(rhr+hrr*lo),Math.round(rhr+hrr*hi)];
   return{maxHR,hrr,z1:z(0.50,0.60),z2:z(0.60,0.70),z3:z(0.70,0.80),z4:z(0.80,0.90),z5:z(0.90,1.00)};
 }
-function getZoneForHR(hr){
-  if(!hrZones.z1)return 2;
-  if(hr<hrZones.z1[0])return 1;
-  if(hr<hrZones.z2[0])return 1;
-  if(hr<hrZones.z3[0])return 2;
-  if(hr<hrZones.z4[0])return 3;
-  if(hr<hrZones.z5[0])return 4;
-  return 5;
-}
+function getZoneForHR(hr){if(!hrZones.z1)return 2;if(hr<hrZones.z1[0])return 1;if(hr<hrZones.z2[0])return 1;if(hr<hrZones.z3[0])return 2;if(hr<hrZones.z4[0])return 3;if(hr<hrZones.z5[0])return 4;return 5;}
 function loadSettings(){
   const s=localStorage.getItem('trainer_settings');
   if(s){try{userSettings={...userSettings,...JSON.parse(s)};}catch{}}
@@ -531,14 +569,8 @@ function saveSettings(){
 function renderZonePreview(){
   if(!$('zone-preview-grid'))return;
   const z=computeZones(parseInt($('setting-age').value)||userSettings.age||30,parseInt($('setting-rhr').value)||userSettings.rhr||60,parseInt($('setting-mhr').value)||userSettings.mhr||null);
-  const zones=[
-    {name:'Z1 Recovery',range:`${z.z1[0]}–${z.z1[1]}`,bg:'rgba(74,158,255,0.1)',border:'rgba(74,158,255,0.3)',col:'#4a9eff'},
-    {name:'Z2 Aerobic',range:`${z.z2[0]}–${z.z2[1]}`,bg:'rgba(39,201,111,0.1)',border:'rgba(39,201,111,0.3)',col:'#27c96f'},
-    {name:'Z3 Tempo',range:`${z.z3[0]}–${z.z3[1]}`,bg:'rgba(245,166,35,0.1)',border:'rgba(245,166,35,0.3)',col:'#f5a623'},
-    {name:'Z4 Threshold',range:`${z.z4[0]}–${z.z4[1]}`,bg:'rgba(252,76,2,0.1)',border:'rgba(252,76,2,0.3)',col:'#FC4C02'},
-    {name:'Z5 VO2max',range:`${z.z5[0]}+`,bg:'rgba(229,57,53,0.1)',border:'rgba(229,57,53,0.3)',col:'#e53935'},
-  ];
-  $('zone-preview-grid').innerHTML=zones.map(z=>`<div class="zone-box" style="background:${z.bg};border-color:${z.border};"><div class="zone-box-name" style="color:${z.col};">${z.name}</div><div class="zone-box-range" style="color:${z.col};">${z.range}</div></div>`).join('');
+  const zones=[{n:'Z1 Recovery',r:`${z.z1[0]}–${z.z1[1]}`,bg:'rgba(74,158,255,0.1)',bc:'rgba(74,158,255,0.3)',c:'#4a9eff'},{n:'Z2 Aerobic',r:`${z.z2[0]}–${z.z2[1]}`,bg:'rgba(39,201,111,0.1)',bc:'rgba(39,201,111,0.3)',c:'#27c96f'},{n:'Z3 Tempo',r:`${z.z3[0]}–${z.z3[1]}`,bg:'rgba(245,166,35,0.1)',bc:'rgba(245,166,35,0.3)',c:'#f5a623'},{n:'Z4 Threshold',r:`${z.z4[0]}–${z.z4[1]}`,bg:'rgba(252,76,2,0.1)',bc:'rgba(252,76,2,0.3)',c:'#FC4C02'},{n:'Z5 VO2max',r:`${z.z5[0]}+`,bg:'rgba(229,57,53,0.1)',bc:'rgba(229,57,53,0.3)',c:'#e53935'}];
+  $('zone-preview-grid').innerHTML=zones.map(z=>`<div class="zone-box" style="background:${z.bg};border-color:${z.bc};"><div class="zone-box-name" style="color:${z.c};">${z.n}</div><div class="zone-box-range" style="color:${z.c};">${z.r}</div></div>`).join('');
 }
 
 // ── SCREENS ──
@@ -553,7 +585,7 @@ function switchTab(name,btn){document.querySelectorAll('.tab-panel').forEach(p=>
 async function fetchAllActivities(token){
   let all=[],page=1;
   while(page<=5){
-    $('loading-detail').textContent=`Page ${page}… (${all.length} activities loaded)`;
+    $('loading-detail').textContent=`Page ${page}… (${all.length} loaded)`;
     const res=await fetch(`https://www.strava.com/api/v3/athlete/activities?per_page=100&page=${page}`,{headers:{Authorization:`Bearer ${token}`}});
     if(!res.ok)break;
     const batch=await res.json();
@@ -578,132 +610,278 @@ function generateDemoData(){
 }
 function loadDemo(){isDemo=true;activitiesData=generateDemoData();renderAll('Demo Athlete');show('dashboard-screen');$('demo-notice').style.display='block';generateAIInsight();generateWeeklyPlan();}
 
-// ── VDOT (Jack Daniels — corrected) ──
-function vo2FromVelocity(v){return -4.60+0.182258*v+0.000104*v*v;}// v in m/min
+// ── VDOT (v4: recalibrated) ──
+function vo2FromVelocity(v){return -4.60+0.182258*v+0.000104*v*v;}
 function percentVO2FromDuration(dMin){return 0.8+0.1894393*Math.exp(-0.012778*dMin)+0.2989558*Math.exp(-0.1932605*dMin);}
 function calcVDOT(distM,timeSec){
+  if(timeSec<=0||distM<=0)return 0;
   const v=distM/(timeSec/60);
   const pct=percentVO2FromDuration(timeSec/60);
   return vo2FromVelocity(v)/pct;
 }
 function predictTimeFromVDOT(vdot,distM){
-  let lo=30,hi=100000;
-  for(let i=0;i<60;i++){const mid=(lo+hi)/2;if(calcVDOT(distM,mid)>vdot)lo=mid;else hi=mid;}
+  let lo=20,hi=200000;
+  for(let i=0;i<80;i++){const mid=(lo+hi)/2;if(calcVDOT(distM,mid)>vdot)lo=mid;else hi=mid;}
   return(lo+hi)/2;
 }
 
-// v3 correction: weight longer efforts, apply fatigue factor, conservative curve
+// v4: sweet-spot calibration
+// - Only runs >2km and >8min
+// - Soft distance weighting (not as aggressive as v3)
+// - No flat correction — let the athlete's actual data speak
+// - Use median of top efforts rather than just top 3, to resist outliers
 function getBestVDOT(runs){
   if(!runs.length)return 0;
-
-  // Only use efforts where distance > 3km AND duration > 12 min for reliability
-  const eligible=runs.filter(r=>r.distance>3000&&r.moving_time>720&&r.average_speed>0);
+  const eligible=runs.filter(r=>r.distance>2000&&r.moving_time>480&&r.average_speed>0);
   if(!eligible.length)return 0;
-
-  // Score each run: prefer longer efforts (more reliable VDOT)
-  const scores=eligible.map(r=>{
+  const scored=eligible.map(r=>{
     const raw=calcVDOT(r.distance,r.moving_time);
-    // Weight by distance: longer = more reliable. Cap at marathon distance.
+    // Soft weight: runs 5K+ get full credit, shorter runs get 85-95% credit
     const distKm=r.distance/1000;
-    const weight=Math.min(distKm/42.195,1.0); // 0..1 based on how close to marathon
-    const weightedVDOT=raw*(0.6+0.4*weight); // short runs discounted up to 40%
-    return{raw,weighted:weightedVDOT,dist:distKm};
-  }).filter(s=>s.raw>20&&s.raw<85); // sanity bounds
-
-  if(!scores.length)return 0;
-
-  // Take weighted average of top 3 efforts
-  scores.sort((a,b)=>b.weighted-a.weighted);
-  const top=scores.slice(0,3);
-  const avg=top.reduce((s,x)=>s+x.weighted,0)/top.length;
-
-  // Conservative correction: apply 3% reduction to account for race-day vs training
-  return parseFloat((avg*0.97).toFixed(1));
+    const weight=distKm>=5?1.0:distKm>=3?0.95:0.88;
+    return{vdot:raw*weight,raw,dist:distKm};
+  }).filter(s=>s.vdot>18&&s.vdot<82);
+  if(!scored.length)return 0;
+  scored.sort((a,b)=>b.vdot-a.vdot);
+  // Median of top 5 (or fewer) to balance best efforts without outlier inflation
+  const top=scored.slice(0,Math.min(5,scored.length));
+  const mid=Math.floor(top.length/2);
+  // Weighted blend: 60% median, 40% mean of top efforts
+  const median=top[mid].vdot;
+  const mean=top.reduce((s,x)=>s+x.vdot,0)/top.length;
+  return parseFloat((median*0.6+mean*0.4).toFixed(1));
 }
 
-// ── WEEKLY MILEAGE TREND ──
+// Monthly VDOT history
+function getMonthlyVDOT(){
+  const runs=activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type)&&a.distance>2000&&a.moving_time>480);
+  if(!runs.length)return[];
+  const byMonth={};
+  runs.forEach(r=>{
+    const d=new Date(r.start_date_local);
+    const key=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+    if(!byMonth[key])byMonth[key]=[];
+    byMonth[key].push(r);
+  });
+  return Object.entries(byMonth).sort((a,b)=>a[0].localeCompare(b[0])).map(([key,rs])=>{
+    const vdot=getBestVDOT(rs);
+    const [yr,mo]=key.split('-');
+    return{label:`${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(mo)-1]} ${yr.slice(2)}`,vdot,key};
+  }).filter(m=>m.vdot>0);
+}
+
+// ── WEEKLY VOLUMES ──
 function getWeeklyVolumes(){
   const weeks=[];
   for(let i=0;i<8;i++){
     const end=new Date(Date.now()-i*7*86400000);
     const start=new Date(+end-7*86400000);
-    const runs=activitiesData.filter(a=>{
-      const d=new Date(a.start_date_local);
-      return d>=start&&d<end&&['Run','VirtualRun'].includes(a.type||a.sport_type);
-    });
-    const dist=runs.reduce((s,r)=>s+(r.distance||0),0)/1609.34; // miles always for calc
-    weeks.push({dist,weekIndex:i});
+    const runs=activitiesData.filter(a=>{const d=new Date(a.start_date_local);return d>=start&&d<end&&['Run','VirtualRun'].includes(a.type||a.sport_type);});
+    weeks.push({dist:runs.reduce((s,r)=>s+(r.distance||0),0)/1609.34,weekIndex:i});
   }
-  return weeks.reverse(); // oldest first
+  return weeks.reverse();
 }
 
-// ── TRAINING PHASE (v3: volume trend + peak HR + HR zones) ──
+// ── TRAINING PHASE ──
 function detectPhase(activities){
   const runs=activities.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
   if(runs.length<3)return{phase:'Insufficient Data',icon:'❓',cls:'base',desc:'Log at least 3 runs to detect your training phase.',metrics:[]};
-
   const now=Date.now();
-  const recent=runs.filter(a=>new Date(a.start_date_local)>new Date(now-14*86400000)); // last 2 weeks
-  const mid=runs.filter(a=>{const d=new Date(a.start_date_local);return d>new Date(now-35*86400000)&&d<=new Date(now-14*86400000);}); // 2-5 weeks ago
-  const peak=runs.filter(a=>{const d=new Date(a.start_date_local);return d>new Date(now-70*86400000)&&d<=new Date(now-35*86400000);}); // 5-10 weeks ago
-
-  const vol=arr=>arr.reduce((s,r)=>s+(r.distance||0),0)/1609.34; // miles
-  const recentVol=vol(recent);
-  const midVol=vol(mid);
-  const peakVol=vol(peak);
-  const maxHistoricalVol=Math.max(midVol,peakVol,1);
-
-  // Volume trend: is athlete tapering?
-  const isTapering=recentVol<maxHistoricalVol*0.72&&maxHistoricalVol>20;
-  const volDropPct=maxHistoricalVol>0?Math.round((1-recentVol/maxHistoricalVol)*100):0;
-
-  // HR zone analysis using BOTH avg and peak HR
-  let zoneTimes=[0,0,0,0,0];
-  let peakHRhits=0; // count of runs hitting Z4/Z5 on peak HR
+  const recent=runs.filter(a=>new Date(a.start_date_local)>new Date(now-14*86400000));
+  const mid=runs.filter(a=>{const d=new Date(a.start_date_local);return d>new Date(now-35*86400000)&&d<=new Date(now-14*86400000);});
+  const peak=runs.filter(a=>{const d=new Date(a.start_date_local);return d>new Date(now-70*86400000)&&d<=new Date(now-35*86400000);});
+  const vol=arr=>arr.reduce((s,r)=>s+(r.distance||0),0)/1609.34;
+  const recentVol=vol(recent),midVol=vol(mid),peakVol=vol(peak);
+  const maxHist=Math.max(midVol,peakVol,1);
+  const isTapering=recentVol<maxHist*0.72&&maxHist>20;
+  const volDropPct=Math.round((1-recentVol/maxHist)*100);
+  let zoneTimes=[0,0,0,0,0],peakHRhits=0;
   recent.forEach(r=>{
-    const avgHR=r.average_heartrate||0;
-    const maxHR=r.max_heartrate||0;
-    if(avgHR){const z=getZoneForHR(avgHR)-1;zoneTimes[z]+=(r.moving_time||0);}
-    // Peak HR: if max HR is in Z4/Z5, flag as a hard effort even if avg looks easy
+    const avgHR=r.average_heartrate||0,maxHR=r.max_heartrate||0;
+    if(avgHR){zoneTimes[getZoneForHR(avgHR)-1]+=(r.moving_time||0);}
     if(maxHR&&getZoneForHR(maxHR)>=4)peakHRhits++;
   });
-  const totalZoneTime=zoneTimes.reduce((s,v)=>s+v,0)||1;
-  const zonePcts=zoneTimes.map(t=>t/totalZoneTime);
-  const easyPct=zonePcts[0]+zonePcts[1];
-  const hardPct=zonePcts[3]+zonePcts[4];
+  const totalZT=zoneTimes.reduce((s,v)=>s+v,0)||1;
+  const zp=zoneTimes.map(t=>t/totalZT);
+  const easyPct=zp[0]+zp[1],hardPct=zp[3]+zp[4];
   const peakHRpct=recent.length>0?peakHRhits/recent.length:0;
-
-  // Combined hard signal: avg HR in Z4/Z5 OR frequent peak HR in Z4/Z5
-  const effectiveHardPct=Math.max(hardPct,peakHRpct*0.7);
-
+  const effectiveHard=Math.max(hardPct,peakHRpct*0.7);
   let phase,icon,cls,desc;
-
-  if(isTapering&&(effectiveHardPct>0.2||peakHRhits>0)){
+  if(isTapering&&(effectiveHard>0.2||peakHRhits>0)){
     phase='Taper / Race Ready';icon='🏁';cls='taper';
-    desc=`Volume down ${volDropPct}% from peak (${recentVol.toFixed(0)} mi vs ${maxHistoricalVol.toFixed(0)} mi peak) with Z4/Z5 HR detected in ${Math.round(peakHRpct*100)}% of recent runs — textbook taper pattern. Trust the fitness you've built.`;
-  } else if(effectiveHardPct>0.35&&recentVol>25){
+    desc=`Volume down ${volDropPct}% from peak (${recentVol.toFixed(0)} mi vs ${maxHist.toFixed(0)} mi peak) with hard HR efforts in ${Math.round(peakHRpct*100)}% of recent runs — textbook taper. Trust your fitness.`;
+  }else if(effectiveHard>0.35&&recentVol>25){
     phase='Peak Fitness';icon='⚡';cls='race';
-    desc=`High volume (${recentVol.toFixed(0)} mi) AND ${Math.round(effectiveHardPct*100)}% of efforts reaching Z4/Z5 — you\'re at peak fitness. Recovery between hard sessions is critical right now.`;
-  } else if(effectiveHardPct>0.2&&recentVol>=15){
+    desc=`High volume (${recentVol.toFixed(0)} mi) AND ${Math.round(effectiveHard*100)}% hard efforts — peak fitness. Prioritize recovery.`;
+  }else if(effectiveHard>0.2&&recentVol>=15){
     phase='Threshold Building';icon='🔥';cls='threshold';
-    desc=`Solid volume (${recentVol.toFixed(0)} mi last 2 wks) with meaningful Z4/Z5 effort (${Math.round(effectiveHardPct*100)}% of runs) — building race-specific fitness on a good aerobic base.`;
-  } else if(recentVol<10||recent.length<2){
+    desc=`${recentVol.toFixed(0)} mi last 2 weeks with ${Math.round(effectiveHard*100)}% hard efforts — building race-specific fitness on a solid base.`;
+  }else if(recentVol<10||recent.length<2){
     phase='Recovery / Off Season';icon='💤';cls='recovery';
-    desc=`Low recent mileage (${recentVol.toFixed(0)} mi last 2 weeks). Could be planned recovery, off-season, or returning from a break — ease back in gradually.`;
-  } else {
+    desc=`Low recent mileage (${recentVol.toFixed(0)} mi last 2 weeks). Ease back in gradually.`;
+  }else{
     phase='Base Building';icon='🏗️';cls='base';
-    desc=`${Math.round(easyPct*100)}% of HR time in Z1/Z2 with ${recentVol.toFixed(0)} mi last 2 weeks — strong aerobic base work. This engine will power future speed.`;
+    desc=`${Math.round(easyPct*100)}% HR time in Z1/Z2 with ${recentVol.toFixed(0)} mi last 2 weeks — strong aerobic base. This engine will power future speed.`;
   }
-
-  const metrics=[
-    {val:recentVol.toFixed(0)+' mi',lbl:'last 2 wks'},
-    {val:maxHistoricalVol.toFixed(0)+' mi',lbl:'peak 2 wks'},
-    {val:Math.round(effectiveHardPct*100)+'%',lbl:'hard effort'},
-  ];
-  return{phase,icon,cls,desc,metrics};
+  return{phase,icon,cls,desc,metrics:[{val:recentVol.toFixed(0)+' mi',lbl:'last 2 wks'},{val:maxHist.toFixed(0)+' mi',lbl:'peak 2 wks'},{val:Math.round(effectiveHard*100)+'%',lbl:'hard effort'}]};
 }
 
-// ── RENDER ──
+// ── ALL RACE DISTANCES ──
+const ALL_RACES=[
+  {section:'Track',races:[{name:'400m',m:400},{name:'800m',m:800},{name:'1500m',m:1500},{name:'1 Mile',m:1609.34}]},
+  {section:'Road — Short',races:[{name:'1K',m:1000},{name:'2 Mile',m:3218.69},{name:'3K',m:3000},{name:'5K',m:5000},{name:'8K',m:8000}]},
+  {section:'Road — Mid',races:[{name:'10K',m:10000},{name:'12K',m:12000},{name:'15K',m:15000},{name:'10 Mile',m:16093.4}]},
+  {section:'Road — Long',races:[{name:'20K',m:20000},{name:'Half Marathon',m:21097.5},{name:'25K',m:25000},{name:'30K',m:30000},{name:'Marathon',m:42195}]},
+];
+
+function renderFullRaceTable(vdot){
+  if(!vdot){$('full-race-table').innerHTML='<div style="color:var(--muted);font-size:0.85rem;padding:1rem 0;">Need at least one run over 1.2 miles to calculate predictions.</div>';return;}
+  let html=`<table class="race-table"><thead><tr><th>Distance</th><th>Predicted Time</th><th>Pace (${paceUnit()})</th></tr></thead><tbody>`;
+  ALL_RACES.forEach(section=>{
+    html+=`<tr><td class="race-section-header" colspan="3">${section.section}</td></tr>`;
+    section.races.forEach(r=>{
+      const secs=predictTimeFromVDOT(vdot,r.m);
+      const spd=r.m/secs;
+      html+=`<tr><td>${r.name}</td><td>${secToHMS(secs)}</td><td>${speedToPace(spd)}</td></tr>`;
+    });
+  });
+  html+=`</tbody></table>`;
+  $('full-race-table').innerHTML=html;
+}
+
+function renderOverviewPredictions(vdot){
+  if(!vdot){$('predictor-overview').innerHTML='<div style="color:var(--muted);font-size:0.8rem;">Need a run over 1.2 miles</div>';return;}
+  const key=[{name:'1 Mile',m:1609.34},{name:'5K',m:5000},{name:'10K',m:10000},{name:'Half',m:21097.5},{name:'Marathon',m:42195}];
+  $('predictor-overview').innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">${key.map(r=>{
+    const secs=predictTimeFromVDOT(vdot,r.m);
+    const spd=r.m/secs;
+    return`<div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem;"><div style="font-size:0.66rem;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:4px;">${r.name}</div><div style="font-size:1.05rem;font-weight:600;">${secToHMS(secs)}</div><div style="font-size:0.66rem;color:var(--muted);font-family:'DM Mono',monospace;margin-top:2px;">${speedToPace(spd)} ${paceUnit()}</div></div>`;
+  }).join('')}</div>`;
+}
+
+// ── VO2 OVER TIME CHART ──
+function renderVO2Timeline(vdot,phase){
+  const history=getMonthlyVDOT();
+  if(!history.length){$('vo2-timeline-svg').innerHTML='<text x="350" y="80" fill="#7a7875" text-anchor="middle" font-size="12" font-family="DM Mono">Not enough data for timeline</text>';return;}
+
+  // Project 6 months forward
+  const phaseGrowth={'Base Building':0.5,'Threshold Building':0.8,'Peak Fitness':0.2,'Taper / Race Ready':0.1,'Recovery / Off Season':-0.2,'Insufficient Data':0};
+  const monthlyGain=phaseGrowth[phase.phase]||0.3;
+  const projections=[];
+  let lastVDOT=vdot;
+  for(let i=1;i<=6;i++){
+    lastVDOT=Math.min(lastVDOT+monthlyGain,85);
+    const d=new Date();d.setMonth(d.getMonth()+i);
+    projections.push({label:`${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]} ${String(d.getFullYear()).slice(2)}`,vdot:parseFloat(lastVDOT.toFixed(1)),projected:true});
+  }
+
+  const allPoints=[...history,{label:'Now',vdot,current:true},...projections];
+  const allVals=allPoints.map(p=>p.vdot);
+  const minV=Math.max(0,Math.min(...allVals)-5);
+  const maxV=Math.max(...allVals)+5;
+  const W=700,H=140,padL=40,padR=10,padT=10,padB=30;
+  const xScale=(i)=>padL+(i/(allPoints.length-1))*(W-padL-padR);
+  const yScale=(v)=>padT+(1-(v-minV)/(maxV-minV))*(H-padT-padB);
+
+  // Build path for history
+  const histPts=allPoints.filter(p=>!p.projected);
+  const histPath=histPts.map((p,i)=>{const xi=allPoints.indexOf(p);return`${i===0?'M':'L'}${xScale(xi).toFixed(1)},${yScale(p.vdot).toFixed(1)}`;}).join(' ');
+
+  // Build path for projection (starts at current)
+  const projStart=allPoints.findIndex(p=>p.current);
+  const projPts=[allPoints[projStart],...allPoints.filter(p=>p.projected)];
+  const projPath=projPts.map((p,i)=>{const xi=allPoints.indexOf(p);return`${i===0?'M':'L'}${xScale(xi).toFixed(1)},${yScale(p.vdot).toFixed(1)}`;}).join(' ');
+
+  let svg=``;
+  // Grid lines
+  for(let v=Math.ceil(minV/5)*5;v<=maxV;v+=5){
+    const y=yScale(v).toFixed(1);
+    svg+=`<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>`;
+    svg+=`<text x="${padL-4}" y="${parseFloat(y)+4}" fill="#7a7875" font-size="9" text-anchor="end" font-family="DM Mono">${v}</text>`;
+  }
+  // History line
+  svg+=`<path d="${histPath}" fill="none" stroke="#4a9eff" stroke-width="2" stroke-linejoin="round"/>`;
+  // Projection line (dashed)
+  svg+=`<path d="${projPath}" fill="none" stroke="#27c96f" stroke-width="2" stroke-dasharray="6,4" stroke-linejoin="round"/>`;
+  // Points
+  allPoints.forEach((p,i)=>{
+    const x=xScale(i).toFixed(1),y=yScale(p.vdot).toFixed(1);
+    const col=p.current?'#FC4C02':p.projected?'#27c96f':'#4a9eff';
+    const r=p.current?5:3;
+    svg+=`<circle cx="${x}" cy="${y}" r="${r}" fill="${col}"/>`;
+    if(p.current){svg+=`<text x="${x}" y="${parseFloat(y)-8}" fill="#FC4C02" font-size="10" text-anchor="middle" font-family="DM Mono" font-weight="bold">${p.vdot}</text>`;}
+  });
+  // X labels — show every other one to avoid crowding
+  allPoints.forEach((p,i)=>{
+    if(i%2===0||p.current){
+      const x=xScale(i).toFixed(1);
+      svg+=`<text x="${x}" y="${H-2}" fill="#7a7875" font-size="8" text-anchor="middle" font-family="DM Mono">${p.label}</text>`;
+    }
+  });
+
+  $('vo2-timeline-svg').innerHTML=svg;
+
+  const trend=history.length>1?history[history.length-1].vdot-history[0].vdot:0;
+  $('vo2-trend-desc').textContent=`Over the past ${history.length} months your VDOT has ${trend>0?`improved by ${trend.toFixed(1)} points`:'remained stable'}. Based on your current ${phase.phase} phase, we project a ${monthlyGain>0?`gain of ~${monthlyGain.toFixed(1)} VDOT points/month`:'maintenance period'} over the next 6 months.`;
+}
+
+// ── RACE PLANNER ──
+function generateRacePlan(){
+  const distM=parseFloat($('planner-dist').value);
+  const goalStr=$('planner-goal').value;
+  const dateStr=$('planner-date').value;
+  if(!dateStr){alert('Please enter a race date.');return;}
+
+  const raceDate=new Date(dateStr);
+  const today=new Date();
+  const weeksOut=Math.round((raceDate-today)/(7*86400000));
+
+  const runs=activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
+  const vdot=getBestVDOT(runs.filter(r=>r.distance>2000&&r.moving_time>480));
+
+  // Goal time feasibility
+  const goalSecs=parseGoalTime(goalStr);
+  const predictedSecs=vdot>0?predictTimeFromVDOT(vdot,distM):0;
+  const distName=$('planner-dist').options[$('planner-dist').selectedIndex].text;
+
+  let feasibility,feasCls,feasDesc;
+  if(!goalSecs||!predictedSecs){
+    feasibility='Based on current fitness';feasCls='achievable';
+    feasDesc=`With VDOT ${vdot}, our best prediction for ${distName} is <strong>${secToHMS(predictedSecs)}</strong>.`;
+  }else{
+    const ratio=goalSecs/predictedSecs;
+    if(ratio>=0.97){feasibility='✓ Achievable';feasCls='achievable';feasDesc=`Your goal of <strong>${secToHMS(goalSecs)}</strong> is realistic! Your current VDOT ${vdot} predicts <strong>${secToHMS(predictedSecs)}</strong>. You have a ${Math.round((1-ratio)*100*-1)}% buffer.`;}
+    else if(ratio>=0.90){feasibility='⚡ Stretch goal';feasCls='stretch';feasDesc=`Your goal of <strong>${secToHMS(goalSecs)}</strong> is a stretch — your VDOT ${vdot} predicts <strong>${secToHMS(predictedSecs)}</strong>. You'd need to improve fitness by ~${Math.round((predictedSecs-goalSecs)/predictedSecs*100)}%.`;}
+    else{feasibility='🔥 Aggressive';feasCls='aggressive';feasDesc=`Your goal of <strong>${secToHMS(goalSecs)}</strong> is very aggressive vs your current VDOT ${vdot} prediction of <strong>${secToHMS(predictedSecs)}</strong>. Consider adjusting your goal or giving yourself more time.`;}
+  }
+
+  // Phase blocks based on weeks out
+  let phases=[];
+  if(weeksOut<=4){phases=[{name:'Taper',weeks:weeksOut,desc:'Race ready',active:true}];}
+  else if(weeksOut<=8){phases=[{name:'Build',weeks:Math.floor(weeksOut*0.6),desc:'Speed work',active:false},{name:'Taper',weeks:Math.ceil(weeksOut*0.4),desc:'Race prep',active:true}];}
+  else if(weeksOut<=16){phases=[{name:'Base',weeks:Math.floor(weeksOut*0.35),desc:'Mileage',active:false},{name:'Build',weeks:Math.floor(weeksOut*0.4),desc:'Tempo+intervals',active:true},{name:'Taper',weeks:Math.ceil(weeksOut*0.25),desc:'Race prep',active:false}];}
+  else{phases=[{name:'Base',weeks:Math.floor(weeksOut*0.4),desc:'Aerobic base',active:false},{name:'Build',weeks:Math.floor(weeksOut*0.3),desc:'Volume+tempo',active:true},{name:'Threshold',weeks:Math.floor(weeksOut*0.18),desc:'Race-specific',active:false},{name:'Taper',weeks:Math.ceil(weeksOut*0.12),desc:'Race prep',active:false}];}
+
+  const ph=detectPhase(activitiesData);
+  const currentPhaseIdx=phases.findIndex(p=>p.active);
+  // Mark which phase we're actually in based on weeks out
+  phases.forEach((p,i)=>{p.active=i===(weeksOut<=4?0:weeksOut<=8?1:weeksOut<=16?1:1);});
+
+  $('plan-result-title').textContent=`${distName} — ${raceDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})} (${weeksOut} weeks away)`;
+  $('goal-feasibility').textContent=feasibility;
+  $('goal-feasibility').className=`goal-feasibility ${feasCls}`;
+  $('phase-timeline').innerHTML=phases.map(p=>`<div class="phase-block${p.active?' active-phase':''}"><div class="phase-block-name">${p.name}</div><div class="phase-block-weeks">${p.weeks}w</div><div class="phase-block-desc">${p.desc}</div></div>`).join('');
+
+  // Distance-specific tips
+  const isSprint=distM<=1609;const isMid=distM<=10000;
+  const tipMap={sprint:`Focus on speed work — 200m/400m repeats, hill sprints, and strides. Keep easy days truly easy.`,mid:`Mix of VO2max intervals (800m-1600m), tempo runs, and weekly long runs. ${distM<=5000?'5K training thrives on high volume and frequent quality sessions.':'10K requires strong lactate threshold — cruise intervals are your best friend.'}`,long:`Build long run mileage progressively (+1-2 mi/week max). Marathon-pace miles in the long run are essential. Don't neglect easy mileage — it's the foundation.`};
+  const tip=distM<=1609?tipMap.sprint:distM<=10000?tipMap.mid:tipMap.long;
+
+  $('planner-insights').innerHTML=`${feasDesc}<br><br><strong>You're ${weeksOut} weeks out.</strong> ${weeksOut<8?'A focused peak block can still make a big difference.':weeksOut<16?'Good window — enough time to build fitness and taper properly.':'Excellent runway — a full periodized plan will maximize your potential.'}<br><br><strong>Distance tip:</strong> ${tip}`;
+  $('plan-result').classList.add('show');
+}
+
+// ── MAIN RENDER ──
 function renderAll(athleteName){
   $('athlete-name').textContent=athleteName;
   $('athlete-initials').textContent=nameInitials(athleteName);
@@ -712,6 +890,7 @@ function renderAll(athleteName){
   const weekAgo=new Date(now-7*86400000),monthAgo=new Date(now-30*86400000);
   const weekActs=activitiesData.filter(a=>new Date(a.start_date_local)>weekAgo);
   const monthActs=activitiesData.filter(a=>new Date(a.start_date_local)>monthAgo);
+  const vdot=getBestVDOT(runs.filter(r=>r.distance>2000&&r.moving_time>480));
 
   $('stat-dist').textContent=mToDisplay(weekActs.reduce((s,a)=>s+(a.distance||0),0));
   $('stat-dist-sub').textContent=distUnit()+' this week';
@@ -721,17 +900,27 @@ function renderAll(athleteName){
   $('stat-pace-sub').textContent=paceUnit();
   $('stat-load').textContent=Math.round(weekActs.reduce((s,a)=>s+(a.moving_time||0)/60*((a.average_heartrate||140)/185),0))||'—';
   $('stat-acts').textContent=monthActs.length;
-  $('stat-total').textContent=activitiesData.length;
+  $('stat-vdot').textContent=vdot||'—';
 
   const ph=detectPhase(activitiesData);
   const banner=$('status-banner');banner.className=`status-banner ${ph.cls}`;
   $('status-icon').textContent=ph.icon;$('status-name').textContent=ph.phase;$('status-desc').textContent=ph.desc;
   $('status-metrics').innerHTML=ph.metrics.map(m=>`<div class="status-metric"><div class="status-metric-val">${m.val}</div><div class="status-metric-lbl">${m.lbl}</div></div>`).join('');
 
-  renderVolumeChart();renderPaceChart(runs);renderZones(runs);renderVDOT(runs);
+  renderVolumeChart();renderPaceChart(runs);renderZones(runs);
+  renderOverviewPredictions(vdot);
+  ['vdot-score','vdot-score-pred'].forEach(id=>{const el=$(id);if(el)el.textContent=vdot||'—';});
   $('vol-title').textContent=`Weekly volume (${distUnit()}) — last 8 weeks`;
-  renderPerformanceTab(runs);
+
+  renderFullRaceTable(vdot);
+  renderPerformanceTab(runs,vdot,ph);
   shownCount=15;renderActivities();
+
+  const exp=$('vdot-explanation');
+  if(exp){
+    const cat=vdot>=60?'Elite':vdot>=50?'Advanced':vdot>=42?'Competitive':vdot>=35?'Recreational':'Building';
+    exp.innerHTML=`VDOT <strong>${vdot}</strong> — <strong>${cat}</strong> fitness. Predictions use Jack Daniels' formula weighted toward your best efforts across all distances. Times shown represent what your current fitness can achieve on a good day with smart pacing.`;
+  }
 }
 
 function renderVolumeChart(){
@@ -739,23 +928,8 @@ function renderVolumeChart(){
   const vals=weeks.map(w=>useImperial?w.dist:w.dist*1.60934);
   const maxV=Math.max(...vals,1);
   const peakIdx=vals.indexOf(Math.max(...vals));
-  const labels=[];
-  for(let i=7;i>=0;i--){
-    const s=new Date(Date.now()-(i+1)*7*86400000);
-    labels.unshift(s.toLocaleDateString('en-US',{month:'short',day:'numeric'}).split(' ')[0]);
-  }
-  // Re-get labels in correct order
-  const wkLabels=Array.from({length:8},(_,i)=>{
-    const s=new Date(Date.now()-(7-i)*7*86400000-7*86400000);
-    return s.toLocaleDateString('en-US',{month:'short',day:'numeric'}).split(' ')[0];
-  });
-
-  $('volume-chart').innerHTML=vals.map((v,i)=>{
-    const isPeak=i===peakIdx&&v>0;
-    const isCurrent=i===vals.length-1;
-    const cls=isCurrent?'active':isPeak?'peak':'';
-    return`<div class="bar-wrap"><div class="bar${cls?' '+cls:''}" style="height:${Math.max(v/maxV*100,4)}%" title="${v.toFixed(1)} ${distUnit()}"></div></div>`;
-  }).join('');
+  const wkLabels=Array.from({length:8},(_,i)=>{const s=new Date(Date.now()-(7-i)*7*86400000-7*86400000);return s.toLocaleDateString('en-US',{month:'short',day:'numeric'}).split(' ')[0];});
+  $('volume-chart').innerHTML=vals.map((v,i)=>{const isPeak=i===peakIdx&&v>0,isCurrent=i===vals.length-1;const cls=isCurrent?'active':isPeak?'peak':'';return`<div class="bar-wrap"><div class="bar${cls?' '+cls:''}" style="height:${Math.max(v/maxV*100,4)}%" title="${v.toFixed(1)} ${distUnit()}"></div></div>`;}).join('');
   $('volume-labels').innerHTML=wkLabels.map(l=>`<div style="flex:1;text-align:center;font-size:0.55rem;color:var(--muted);font-family:'DM Mono',monospace;">${l}</div>`).join('');
 }
 
@@ -764,86 +938,37 @@ function renderPaceChart(runs){
   if(!recent.length){$('pace-chart').innerHTML='<span style="font-size:0.78rem;color:var(--muted);">No run data</span>';return;}
   const paces=recent.map(r=>r.average_speed>0?1/r.average_speed:null).filter(Boolean);
   const minP=Math.min(...paces),maxP=Math.max(...paces);
-  $('pace-chart').innerHTML=recent.map(r=>{
-    const p=r.average_speed>0?1/r.average_speed:null;
-    if(!p)return'<div class="pace-bar-wrap"><div class="pace-bar" style="height:4%"></div></div>';
-    const pct=maxP===minP?60:((maxP-p)/(maxP-minP))*80+15;
-    return`<div class="pace-bar-wrap"><div class="pace-bar${p===minP?' pr':''}" style="height:${pct.toFixed(0)}%" title="${speedToPace(r.average_speed)} ${paceUnit()} · ${fmtDate(r.start_date_local)}"></div></div>`;
-  }).join('');
+  $('pace-chart').innerHTML=recent.map(r=>{const p=r.average_speed>0?1/r.average_speed:null;if(!p)return'<div class="pace-bar-wrap"><div class="pace-bar" style="height:4%"></div></div>';const pct=maxP===minP?60:((maxP-p)/(maxP-minP))*80+15;return`<div class="pace-bar-wrap"><div class="pace-bar${p===minP?' pr':''}" style="height:${pct.toFixed(0)}%" title="${speedToPace(r.average_speed)} ${paceUnit()} · ${fmtDate(r.start_date_local)}"></div></div>`;}).join('');
 }
 
 function renderZones(runs,targetId='zone-chart'){
-  const zones=[
-    {name:'Z1 Recovery',t:0,c:'#4a9eff'},
-    {name:'Z2 Aerobic',t:0,c:'#27c96f'},
-    {name:'Z3 Tempo',t:0,c:'#f5a623'},
-    {name:'Z4 Threshold',t:0,c:'#FC4C02'},
-    {name:'Z5 VO2max',t:0,c:'#e53935'},
-  ];
-  runs.forEach(r=>{
-    const hr=r.average_heartrate||0;if(!hr)return;
-    zones[getZoneForHR(hr)-1].t+=(r.moving_time||0);
-  });
+  const zones=[{name:'Z1 Recovery',t:0,c:'#4a9eff'},{name:'Z2 Aerobic',t:0,c:'#27c96f'},{name:'Z3 Tempo',t:0,c:'#f5a623'},{name:'Z4 Threshold',t:0,c:'#FC4C02'},{name:'Z5 VO2max',t:0,c:'#e53935'}];
+  runs.forEach(r=>{const hr=r.average_heartrate||0;if(!hr)return;zones[getZoneForHR(hr)-1].t+=(r.moving_time||0);});
   const total=zones.reduce((s,z)=>s+z.t,0)||1;
   const el=$(targetId);if(!el)return;
-  el.innerHTML=zones.map(z=>{
-    const pct=Math.round(z.t/total*100);
-    return`<div class="zone-row"><div class="zone-name">${z.name}</div><div class="zone-bar-bg"><div class="zone-bar-fill" style="width:${pct}%;background:${z.c}"></div></div><div class="zone-pct">${pct}%</div></div>`;
-  }).join('');
+  el.innerHTML=zones.map(z=>{const pct=Math.round(z.t/total*100);return`<div class="zone-row"><div class="zone-name">${z.name}</div><div class="zone-bar-bg"><div class="zone-bar-fill" style="width:${pct}%;background:${z.c}"></div></div><div class="zone-pct">${pct}%</div></div>`;}).join('');
 }
 
-function renderVDOT(runs){
-  const eligible=runs.filter(r=>r.distance>3000&&r.moving_time>720);
-  const vdot=getBestVDOT(eligible);
-  ['vdot-score','vdot-score-2'].forEach(id=>{const el=$(id);if(el)el.textContent=vdot||'—';});
-
-  if(!vdot){
-    ['predictor','predictor-detail'].forEach(id=>{const el=$(id);if(el)el.innerHTML='<div style="color:var(--muted);font-size:0.8rem;grid-column:1/-1;">Need a run over 2 miles to calculate VDOT</div>';});
-    return;
-  }
-
-  const races=[{name:'1 Mile',km:1.60934},{name:'5K',km:5},{name:'10K',km:10},{name:'15K',km:15},{name:'Half Marathon',km:21.0975},{name:'Marathon',km:42.195}];
-  const makeCards=races=>races.map(r=>{
-    const dist=r.km*1000;
-    const secs=predictTimeFromVDOT(vdot,dist);
-    const spd=dist/secs;
-    return`<div class="pred-card"><div class="pred-race">${r.name}</div><div class="pred-time">${secToHMS(secs)}</div><div class="pred-pace">${speedToPace(spd)} ${paceUnit()}</div></div>`;
-  }).join('');
-
-  const pred=$('predictor');if(pred)pred.innerHTML=makeCards(races.slice(1,5));
-  const pred2=$('predictor-detail');if(pred2){$('predictor-detail').style.gridTemplateColumns='repeat(3,1fr)';pred2.innerHTML=makeCards(races);}
-
-  const exp=$('vdot-explanation');
-  if(exp){
-    const cat=vdot>=60?'Elite':vdot>=50?'Advanced':vdot>=42?'Competitive':vdot>=35?'Recreational':'Building';
-    exp.innerHTML=`VDOT <strong>${vdot}</strong> — <strong>${cat}</strong> fitness level. Calculated using Jack Daniels' formula, weighted toward your longer efforts, with a conservative 3% training-to-race adjustment. Race times represent what your current fitness predicts on a good day with proper pacing.`;
-  }
-}
-
-function renderPerformanceTab(runs){
-  const vdot=getBestVDOT(runs.filter(r=>r.distance>3000&&r.moving_time>720));
+function renderPerformanceTab(runs,vdot,ph){
   $('vo2-val').textContent=vdot?vdot.toFixed(1):'—';
   const cat=vdot>=60?{l:'Elite',c:'green'}:vdot>=50?{l:'Advanced',c:'green'}:vdot>=42?{l:'Competitive',c:'blue'}:vdot>=35?{l:'Recreational',c:'amber'}:{l:'Building',c:'amber'};
   $('vo2-badge').textContent=cat.l;$('vo2-badge').className=`perf-badge ${cat.c}`;
   $('vo2-desc').textContent=`VDOT ${vdot} → estimated VO2max ≈ ${vdot} ml/kg/min. Weighted toward longer efforts for accuracy.`;
-
   if(vdot>0){
     const ltSecs=predictTimeFromVDOT(vdot*0.88,15000);
     const ltSpd=15000/ltSecs;
     const ltHR=hrZones.z4?Math.round((hrZones.z4[0]+hrZones.z4[1])/2):Math.round((userSettings.rhr||60)+(((userSettings.mhr||(220-(userSettings.age||30)))|180)-(userSettings.rhr||60))*0.85);
-    $('lt-val').textContent=speedToPace(ltSpd)||'—';
-    $('lt-unit').textContent=paceUnit();
+    $('lt-val').textContent=speedToPace(ltSpd)||'—';$('lt-unit').textContent=paceUnit();
     $('lt-badge').textContent=`~${ltHR} bpm`;
-    $('lt-desc').textContent=`At ${speedToPace(ltSpd)} ${paceUnit()} your body is right at the lactate clearing threshold. Tempo runs at this pace build the biggest fitness gains.`;
+    $('lt-desc').textContent=`At ${speedToPace(ltSpd)} ${paceUnit()} you're at the edge of lactate clearing. Tempo runs here build the biggest fitness gains.`;
   }
-
+  renderVO2Timeline(vdot,ph);
   renderZones(runs,'zone-chart-perf');
   const zoneTimes=[0,0,0,0,0];
   runs.forEach(r=>{const hr=r.average_heartrate||0;if(!hr)return;zoneTimes[getZoneForHR(hr)-1]+=(r.moving_time||0);});
   const total=zoneTimes.reduce((s,v)=>s+v,0)||1;
   const pcts=zoneTimes.map(t=>Math.round(t/total*100));
-  const easyPct=pcts[0]+pcts[1],hardPct=pcts[3]+pcts[4];
-  $('zone-advice').textContent=easyPct>80?'Great aerobic base distribution (80/20 principle). Consider adding one quality session per week.':hardPct>40?'High Z4/Z5 time — ensure full recovery between hard sessions and add more Z2 running to build aerobic base.':'Good distribution. The 80/20 principle (~80% easy Z1/Z2, ~20% hard Z4/Z5) works well for most runners.';
+  $('zone-advice').textContent=(pcts[0]+pcts[1])>80?'Great aerobic distribution. Add one quality session per week to build speed on your solid base.':(pcts[3]+pcts[4])>40?'High Z4/Z5 — ensure full recovery between hard sessions. More Z2 running will build your aerobic engine.':'Good distribution. Aim for ~80% easy (Z1/Z2) and ~20% hard (Z4/Z5).';
 }
 
 function renderActivities(){
@@ -858,17 +983,16 @@ function renderActivities(){
     return`<div class="activity-row"><div><div class="activity-name">${a.name}</div><div class="activity-meta"><span class="badge ${bc}">${type}</span>${fmtDate(a.start_date_local)}</div></div><div class="activity-stat"><span>${mToDisplay(a.distance)}</span> ${distUnit()}</div><div class="activity-stat"><span>${secToHMS(a.moving_time)}</span></div><div class="activity-stat"><span>${speed}</span></div><div class="activity-stat"><span>${hr}</span></div></div>`;
   }).join('');
   const btn=$('show-more-btn');
-  if(activitiesData.length>shownCount){btn.style.display='block';btn.textContent=`Show more (${activitiesData.length-shownCount} remaining) ↓`;}
-  else btn.style.display='none';
+  if(activitiesData.length>shownCount){btn.style.display='block';btn.textContent=`Show more (${activitiesData.length-shownCount} remaining) ↓`;}else btn.style.display='none';
   $('act-count').textContent=`Showing ${Math.min(shownCount,activitiesData.length)} of ${activitiesData.length}`;
 }
 function showMoreActivities(){shownCount+=20;renderActivities();}
 
-// ── WEEKLY PLAN (deep, structured) ──
+// ── WEEKLY PLAN ──
 function buildCtx(){
   const runs=activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
   const ph=detectPhase(activitiesData);
-  const vdot=getBestVDOT(runs.filter(r=>r.distance>3000&&r.moving_time>720));
+  const vdot=getBestVDOT(runs.filter(r=>r.distance>2000&&r.moving_time>480));
   const weekDist=activitiesData.filter(a=>new Date(a.start_date_local)>new Date(Date.now()-7*86400000)).reduce((s,a)=>s+(a.distance||0),0);
   const runSpds=runs.filter(r=>r.average_speed>0);
   const avgSpd=runSpds.length?runSpds.reduce((s,r)=>s+r.average_speed,0)/runSpds.length:0;
@@ -876,131 +1000,49 @@ function buildCtx(){
   const ltPace=vdot>0?speedToPace(15000/predictTimeFromVDOT(vdot*0.88,15000)):'unknown';
   const fiveKPace=vdot>0?speedToPace(5000/predictTimeFromVDOT(vdot,5000)):'unknown';
   const tenKPace=vdot>0?speedToPace(10000/predictTimeFromVDOT(vdot,10000)):'unknown';
-  return`Athlete stats: VDOT ${vdot}, ${runs.length} runs logged, ${mToDisplay(weekDist)} ${distUnit()} this week, avg pace ${speedToPace(avgSpd)} ${paceUnit()}, avg HR ${avgHR}bpm. Paces — 5K: ${fiveKPace}, 10K: ${tenKPace}, LT: ${ltPace} (all ${paceUnit()}). Training phase: ${ph.phase}. ${ph.desc}`;
+  return`VDOT ${vdot}, ${runs.length} runs, ${mToDisplay(weekDist)} ${distUnit()} this week, avg pace ${speedToPace(avgSpd)} ${paceUnit()}, avg HR ${avgHR}bpm. Paces — 5K: ${fiveKPace}, 10K: ${tenKPace}, LT: ${ltPace}. Phase: ${ph.phase}. ${ph.desc}`;
 }
 
 async function generateWeeklyPlan(){
-  $('plan-days').innerHTML='<div class="plan-loading">Building your personalized training plan...</div>';
+  $('plan-days').innerHTML='<div style="font-size:0.85rem;color:var(--muted);">Building your personalized training plan...</div>';
   const ph=detectPhase(activitiesData);
   const runs=activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
-  const vdot=getBestVDOT(runs.filter(r=>r.distance>3000&&r.moving_time>720));
-
+  const vdot=getBestVDOT(runs.filter(r=>r.distance>2000&&r.moving_time>480));
   try{
-    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-      model:'claude-sonnet-4-20250514',
-      max_tokens:1000,
-      system:`You are an elite running coach (equivalent to Jack Daniels or Pete Pfitzinger). Generate a detailed 7-day training week. Respond ONLY with valid JSON, no markdown, no explanation:
-{
-  "days": [
-    {
-      "day": "Monday",
-      "type": "Workout Type",
-      "intensity": "easy|moderate|hard|rest",
-      "summary": "One line summary e.g. '10x400m @ 5K pace'",
-      "warmup": "Warmup description",
-      "main": "Detailed main set with exact reps, distances, paces, rest intervals",
-      "cooldown": "Cooldown description",
-      "duration": "e.g. ~70 min total",
-      "purpose": "Why this workout builds fitness"
-    }
-  ]
-}
-Include: 2 quality workouts (intervals/tempo/fartlek), 1 long run, easy/recovery days between hard efforts, 1 full rest day. Use ${useImperial?'miles and min/mile':'km and min/km'}. Be very specific with paces and reps.`,
-      messages:[{role:'user',content:`Design a training week for this athlete. ${buildCtx()} Make workouts specific to their VDOT and phase. For interval workouts give exact reps like '16x400m' or '8x800m'. For tempo give exact structure like 'double tempo: 2x15min @ LT with 3min jog rest'. For fartlek give exact on/off like '8x(2min hard / 2min easy)'. Long run should have structure like '14mi easy, last 3mi @ marathon pace'.`}]
-    })});
+    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`Elite running coach. Generate detailed 7-day plan. JSON only, no markdown:
+{"days":[{"day":"Monday","type":"Workout Type","intensity":"easy|moderate|hard|rest","summary":"Short summary","warmup":"Details","main":"Exact reps/distances/paces/rest","cooldown":"Details","duration":"~X min","purpose":"Why"}]}
+Include 2 quality sessions, 1 long run, easy days between hard efforts, 1 rest day. Very specific paces and reps. Use ${useImperial?'miles and min/mile':'km and min/km'}.`,messages:[{role:'user',content:`Design training week: ${buildCtx()} Give exact workouts — e.g. '16x400m @ 5K pace w/ 90s rest', 'double tempo 2x15min @ LT pace 3min rest', '8x(2min hard/2min easy) fartlek', '14mi with last 3 at marathon pace'.`}]})});
     const data=await res.json();
     const text=(data.content?.[0]?.text||'').replace(/```json|```/g,'').trim();
-    const parsed=JSON.parse(text);
-    renderPlanDays(parsed.days);
-  }catch(e){
-    // Fallback structured plan based on phase and VDOT
-    renderFallbackPlan(ph.phase,vdot);
-  }
+    renderPlanDays(JSON.parse(text).days);
+  }catch{renderFallbackPlan(ph.phase,vdot);}
 }
 
 function renderPlanDays(days){
   const colors={easy:'#27c96f',moderate:'#f5a623',hard:'#FC4C02',rest:'#7a7875'};
-  const intensityDots=(level)=>{
-    const map={rest:0,easy:2,moderate:4,hard:5};
-    const filled=map[level]||2;
-    return Array.from({length:5},(_,i)=>`<div class="intensity-dot${i<filled?' filled '+(level==='easy'?'easy':level==='hard'?'hard':''):''}">${''}</div>`).join('');
-  };
-
-  $('plan-days').innerHTML=days.map((d,i)=>{
-    const col=colors[d.intensity]||'#7a7875';
-    const isRest=d.intensity==='rest';
-    return`<div class="plan-day">
-      <div class="plan-day-header" onclick="toggleDay(${i})">
-        <div class="plan-day-dot" style="background:${col};"></div>
-        <div class="plan-day-info">
-          <div class="plan-day-name">${d.day}</div>
-          <div class="plan-day-type">${d.type}</div>
-          ${d.summary?`<div class="plan-day-summary">${d.summary}</div>`:''}
-        </div>
-        ${d.duration?`<div style="font-size:0.68rem;color:var(--muted);font-family:'DM Mono',monospace;flex-shrink:0;">${d.duration}</div>`:''}
-        <div class="plan-day-expand" id="expand-${i}">▼</div>
-      </div>
-      <div class="plan-day-body" id="body-${i}">
-        <div style="display:flex;gap:6px;margin-bottom:0.8rem;align-items:center;">
-          <span style="font-size:0.62rem;color:var(--muted);font-family:'DM Mono',monospace;">INTENSITY</span>
-          <div class="intensity-bar">${intensityDots(d.intensity)}</div>
-        </div>
-        ${isRest?`<div class="plan-section"><div class="plan-section-text">Full rest day. No running. Light walking or stretching is fine. Sleep and nutrition are the workout today.</div></div>`:
-        `${d.warmup?`<div class="plan-section"><div class="plan-section-label">Warm-up</div><div class="plan-section-text">${d.warmup}</div></div>`:''}
-        ${d.main?`<div class="plan-section"><div class="plan-section-label">Main Set</div><div class="plan-section-text">${d.main}</div></div>`:''}
-        ${d.cooldown?`<div class="plan-section"><div class="plan-section-label">Cool-down</div><div class="plan-section-text">${d.cooldown}</div></div>`:''}
-        ${d.purpose?`<div class="plan-section"><div class="plan-section-label">Purpose</div><div class="plan-section-text" style="color:var(--muted);font-size:0.78rem;">${d.purpose}</div></div>`:''}`}
-      </div>
-    </div>`;
-  }).join('');
+  const dots=(level)=>{const map={rest:0,easy:2,moderate:4,hard:5};const filled=map[level]||2;return Array.from({length:5},(_,i)=>`<div class="intensity-dot${i<filled?` filled ${level==='easy'?'easy':level==='hard'?'hard':''}`:''}"></div>`).join('');};
+  $('plan-days').innerHTML=days.map((d,i)=>`<div class="plan-day">
+    <div class="plan-day-header" onclick="toggleDay(${i})">
+      <div class="plan-day-dot" style="background:${colors[d.intensity]||'#7a7875'};"></div>
+      <div class="plan-day-info"><div class="plan-day-name">${d.day}</div><div class="plan-day-type">${d.type}</div>${d.summary?`<div class="plan-day-summary">${d.summary}</div>`:''}</div>
+      ${d.duration?`<div style="font-size:0.68rem;color:var(--muted);font-family:'DM Mono',monospace;flex-shrink:0;">${d.duration}</div>`:''}
+      <div style="font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;" id="expand-${i}">▼</div>
+    </div>
+    <div class="plan-day-body" id="body-${i}">
+      <div style="display:flex;gap:6px;margin-bottom:0.8rem;align-items:center;"><span style="font-size:0.62rem;color:var(--muted);font-family:'DM Mono',monospace;">INTENSITY</span><div class="intensity-bar">${dots(d.intensity)}</div></div>
+      ${d.intensity==='rest'?'<div style="font-size:0.82rem;color:var(--text);line-height:1.6;">Full rest day. Sleep, nutrition, and hydration are your workout today.</div>':
+      `${d.warmup?`<div class="plan-section"><div class="plan-section-label">Warm-up</div><div class="plan-section-text">${d.warmup}</div></div>`:''}
+      ${d.main?`<div class="plan-section"><div class="plan-section-label">Main Set</div><div class="plan-section-text">${d.main}</div></div>`:''}
+      ${d.cooldown?`<div class="plan-section"><div class="plan-section-label">Cool-down</div><div class="plan-section-text">${d.cooldown}</div></div>`:''}
+      ${d.purpose?`<div class="plan-section"><div class="plan-section-label">Purpose</div><div class="plan-section-text" style="color:var(--muted);font-size:0.78rem;">${d.purpose}</div></div>`:''}`}
+    </div>
+  </div>`).join('');
 }
-
-function toggleDay(i){
-  const body=$(`body-${i}`),exp=$(`expand-${i}`);
-  const open=body.classList.toggle('open');
-  exp.textContent=open?'▲':'▼';
-}
+function toggleDay(i){const b=$(`body-${i}`),e=$(`expand-${i}`);b.classList.toggle('open');e.textContent=b.classList.contains('open')?'▲':'▼';}
 
 function renderFallbackPlan(phase,vdot){
   const u=distUnit();
-  const plans={
-    'Base Building':[
-      {day:'Monday',type:'Easy Run',intensity:'easy',summary:`5-6 ${u} easy aerobic`,warmup:'5 min walk',main:`5-6 ${u} at conversational pace, Z2 HR. Should be able to hold full sentences.`,cooldown:'5 min walk + stretch',duration:'~55 min',purpose:'Aerobic base development'},
-      {day:'Tuesday',type:'Fartlek',intensity:'hard',summary:`8×(2 min on / 2 min off)`,warmup:`1.5 ${u} easy jog`,main:`8 repetitions: 2 min at 10K effort (hard but controlled), 2 min easy jog recovery. Total fartlek section ~32 min.`,cooldown:`1 ${u} easy jog`,duration:'~60 min',purpose:'Introduces speed stimulus without structured track work'},
-      {day:'Wednesday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},
-      {day:'Thursday',type:'Easy Run',intensity:'easy',summary:`5 ${u} easy`,warmup:'',main:`5 ${u} easy Z2, keep HR well below threshold.`,cooldown:'Stretch 10 min',duration:'~50 min',purpose:'Active recovery, maintain aerobic base'},
-      {day:'Friday',type:'Tempo Run',intensity:'hard',summary:`Double tempo: 2×15 min @ LT`,warmup:`2 ${u} easy jog`,main:`2×15 min at lactate threshold pace (comfortably hard — can say a few words but not chat). 3 min easy jog between reps.`,cooldown:`1.5 ${u} easy`,duration:'~70 min',purpose:'Raises lactate threshold, biggest fitness driver'},
-      {day:'Saturday',type:'Rest or Cross-train',intensity:'easy',summary:'Rest or easy bike/swim',warmup:'',main:'Full rest or 30-45 min non-impact cross-training at easy effort.',cooldown:'',duration:'optional',purpose:'Recovery'},
-      {day:'Sunday',type:'Long Run',intensity:'moderate',summary:`12-14 ${u} with structure`,warmup:'',main:`First 9-10 ${u} easy Z2. Final 2-3 ${u} at marathon goal pace (if known) or moderate effort. Walk last 5 min.`,cooldown:'10 min walk + full stretch',duration:'~2 hr',purpose:'Builds endurance, fat adaptation, and mental toughness'},
-    ],
-    'Threshold Building':[
-      {day:'Monday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery from weekend long run'},
-      {day:'Tuesday',type:'Track Intervals',intensity:'hard',summary:`12×400m @ 5K pace`,warmup:`2 ${u} easy + 4 strides`,main:`12×400m at 5K race pace. Recovery: 90 sec standing rest between each rep. Focus on even splits — do not go out too fast on rep 1.`,cooldown:`1.5 ${u} easy jog`,duration:'~75 min',purpose:'VO2max development, improves running economy'},
-      {day:'Wednesday',type:'Easy Run',intensity:'easy',summary:`5 ${u} recovery`,warmup:'',main:`5 ${u} very easy, Z1/Z2. This is recovery — do not push.`,cooldown:'Stretch',duration:'~50 min',purpose:'Active recovery'},
-      {day:'Thursday',type:'Cruise Intervals',intensity:'hard',summary:`5×1 mile @ LT pace`,warmup:`2 ${u} easy`,main:`5×1 mile at lactate threshold pace. 60 sec rest between reps. If pace slips more than 10 sec/mile, cut to 4 reps.`,cooldown:`1 ${u} easy`,duration:'~80 min',purpose:'Raises lactate threshold with high quality volume'},
-      {day:'Friday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery before weekend'},
-      {day:'Saturday',type:'Easy Run',intensity:'easy',summary:`5-6 ${u} shakeout`,warmup:'',main:`Easy shakeout, Z2. Legs should feel fresh after rest day.`,cooldown:'Stretch',duration:'~50 min',purpose:'Maintain aerobic base, prep for long run'},
-      {day:'Sunday',type:'Long Run',intensity:'moderate',summary:`14-16 ${u} progressive`,warmup:'',main:`Miles 1-10: easy Z2 pace. Miles 11-13: marathon goal pace. Miles 13+: half marathon effort. Do not sprint the finish.`,cooldown:'10 min walk + full stretch',duration:'~2:15 hr',purpose:'Race-specific endurance and mental toughness'},
-    ],
-    'Taper / Race Ready':[
-      {day:'Monday',type:'Easy Shakeout',intensity:'easy',summary:`4 ${u} very easy`,warmup:'',main:`4 ${u} at easy Z1/Z2. Do not push. The hay is in the barn.`,cooldown:'Stretch 10 min',duration:'~40 min',purpose:'Maintain feel without adding fatigue'},
-      {day:'Tuesday',type:'Tune-up Workout',intensity:'hard',summary:`6×200m @ mile pace`,warmup:`1.5 ${u} easy + 4 strides`,main:`6×200m at mile race pace. Full 2 min walk rest. Short, sharp — wakes up fast-twitch without creating fatigue.`,cooldown:`1 ${u} easy`,duration:'~45 min',purpose:'Keeps legs sharp and fast without taxing the body'},
-      {day:'Wednesday',type:'Easy Run',intensity:'easy',summary:`3-4 ${u} easy`,warmup:'',main:`3-4 ${u} easy. Focus on form and relaxation.`,cooldown:'Stretch',duration:'~35 min',purpose:'Active recovery'},
-      {day:'Thursday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'Full rest. Sleep extra if possible. Hydrate well.',cooldown:'',duration:'—',purpose:'Maximize recovery'},
-      {day:'Friday',type:'Strides',intensity:'moderate',summary:`3 ${u} + 6 strides`,warmup:'',main:`3 ${u} easy then 6×20 sec strides at race pace with full walk back recovery. Feel fast, not tired.`,cooldown:'5 min walk',duration:'~30 min',purpose:'Final leg turnover stimulus, keeps neuromuscular system sharp'},
-      {day:'Saturday',type:'Rest',intensity:'rest',summary:'Full rest — race eve',warmup:'',main:'Full rest. Light walking only. Eat well, hydrate, lay out your kit, sleep early.',cooldown:'',duration:'—',purpose:'Final recovery'},
-      {day:'Sunday',type:'🏁 Race Day',intensity:'hard',summary:'Execute your plan',warmup:'10-15 min easy jog + strides',main:`Race! Start 10-15 sec/mile slower than goal pace for the first mile. Trust your training. Your VDOT says you have the fitness. Run your own race.`,cooldown:'Easy walk, celebrate',duration:'Race distance',purpose:'All the work has been done — execute confidently'},
-    ],
-    'Recovery / Off Season':[
-      {day:'Monday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},
-      {day:'Tuesday',type:'Easy Jog',intensity:'easy',summary:`3-4 ${u} very easy`,warmup:'',main:`3-4 ${u} at easy conversational pace. No watch pressure.`,cooldown:'Stretch',duration:'~35 min',purpose:'Maintain movement habit'},
-      {day:'Wednesday',type:'Cross-train',intensity:'easy',summary:'30-40 min non-impact',warmup:'',main:'Cycling, swimming, elliptical, or yoga. Easy effort, HR below Z3. Keep it enjoyable.',cooldown:'',duration:'~40 min',purpose:'Cardiovascular maintenance without run stress'},
-      {day:'Thursday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},
-      {day:'Friday',type:'Easy Run',intensity:'easy',summary:`4 ${u} easy`,warmup:'',main:`4 ${u} easy. Focus on enjoying the run.`,cooldown:'Stretch',duration:'~40 min',purpose:'Aerobic maintenance'},
-      {day:'Saturday',type:'Cross-train or Rest',intensity:'easy',summary:'Optional easy activity',warmup:'',main:'Easy bike ride, hike, or swim if feeling good. Full rest if not.',cooldown:'',duration:'optional',purpose:'Active recovery'},
-      {day:'Sunday',type:'Easy Long Run',intensity:'easy',summary:`6-8 ${u} easy`,warmup:'',main:`6-8 ${u} at easy Z2 pace. This is not a workout — just time on feet and enjoying running.`,cooldown:'Walk 5 min + stretch',duration:'~70 min',purpose:'Maintain aerobic base through off-season'},
-    ],
-  };
+  const plans={'Base Building':[{day:'Monday',type:'Easy Run',intensity:'easy',summary:`5 ${u} easy`,warmup:'5 min walk',main:`5 ${u} conversational pace, Z2 HR throughout`,cooldown:'5 min stretch',duration:'~50 min',purpose:'Aerobic base'},{day:'Tuesday',type:'Fartlek',intensity:'hard',summary:`8×(2min on/2min off)`,warmup:`1.5 ${u} easy`,main:`8 reps: 2 min at 10K effort / 2 min easy jog. Total ~32 min of fartlek.`,cooldown:`1 ${u} easy`,duration:'~65 min',purpose:'Speed stimulus without structure'},{day:'Wednesday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},{day:'Thursday',type:'Easy Run',intensity:'easy',summary:`5 ${u} recovery`,warmup:'',main:`5 ${u} easy Z2. Do not push.`,cooldown:'Stretch',duration:'~50 min',purpose:'Active recovery'},{day:'Friday',type:'Double Tempo',intensity:'hard',summary:`2×15 min @ LT`,warmup:`2 ${u} easy`,main:`2×15 min at lactate threshold pace (comfortably hard). 3 min easy jog rest between reps.`,cooldown:`1.5 ${u} easy`,duration:'~70 min',purpose:'Raises lactate threshold'},{day:'Saturday',type:'Rest',intensity:'rest',summary:'Rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},{day:'Sunday',type:'Long Run',intensity:'moderate',summary:`12 ${u} with structure`,warmup:'',main:`First 9 ${u} easy Z2. Final 2-3 ${u} at marathon effort.`,cooldown:'10 min walk + stretch',duration:'~2 hr',purpose:'Endurance and fat adaptation'}],'Threshold Building':[{day:'Monday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},{day:'Tuesday',type:'Track Intervals',intensity:'hard',summary:`12×400m @ 5K pace`,warmup:`2 ${u} easy + 4 strides`,main:`12×400m at 5K race pace. 90 sec standing rest. Even splits throughout.`,cooldown:`1.5 ${u} easy`,duration:'~75 min',purpose:'VO2max development'},{day:'Wednesday',type:'Easy Run',intensity:'easy',summary:`5 ${u} recovery`,warmup:'',main:`5 ${u} very easy Z1/Z2`,cooldown:'Stretch',duration:'~50 min',purpose:'Active recovery'},{day:'Thursday',type:'Cruise Intervals',intensity:'hard',summary:`5×1 mile @ LT`,warmup:`2 ${u} easy`,main:`5×1 mile at lactate threshold. 60 sec rest between. Cut to 4 reps if pace drops.`,cooldown:`1 ${u} easy`,duration:'~80 min',purpose:'LT development'},{day:'Friday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'',cooldown:'',duration:'—',purpose:'Recovery'},{day:'Saturday',type:'Easy Run',intensity:'easy',summary:`5 ${u} shakeout`,warmup:'',main:`Easy Z2 shakeout`,cooldown:'Stretch',duration:'~50 min',purpose:'Prep for long run'},{day:'Sunday',type:'Long Run',intensity:'moderate',summary:`14 ${u} progressive`,warmup:'',main:`Miles 1-10 easy Z2. Miles 11-12 marathon pace. Miles 13-14 half marathon effort.`,cooldown:'Walk + stretch',duration:'~2:15',purpose:'Race-specific endurance'}],'Taper / Race Ready':[{day:'Monday',type:'Easy Shakeout',intensity:'easy',summary:`4 ${u} very easy`,warmup:'',main:`4 ${u} easy Z1. The hay is in the barn.`,cooldown:'Stretch',duration:'~40 min',purpose:'Maintain feel'},{day:'Tuesday',type:'Tune-up',intensity:'hard',summary:`6×200m @ mile pace`,warmup:`1.5 ${u} easy + 4 strides`,main:`6×200m at mile race pace. Full 2 min walk rest. Short and sharp.`,cooldown:`1 ${u} easy`,duration:'~45 min',purpose:'Keep legs sharp'},{day:'Wednesday',type:'Easy Run',intensity:'easy',summary:`3 ${u} easy`,warmup:'',main:`3 ${u} easy. Focus on form.`,cooldown:'Stretch',duration:'~30 min',purpose:'Active recovery'},{day:'Thursday',type:'Rest',intensity:'rest',summary:'Full rest',warmup:'',main:'Sleep extra. Hydrate.',cooldown:'',duration:'—',purpose:'Maximize recovery'},{day:'Friday',type:'Strides',intensity:'moderate',summary:`3 ${u} + 6 strides`,warmup:'',main:`3 ${u} easy then 6×20 sec strides at race pace. Full walk back recovery.`,cooldown:'5 min walk',duration:'~30 min',purpose:'Final turnover stimulus'},{day:'Saturday',type:'Rest',intensity:'rest',summary:'Race eve rest',warmup:'',main:'Light walking only. Eat well, sleep early.',cooldown:'',duration:'—',purpose:'Final recovery'},{day:'Sunday',type:'🏁 Race Day',intensity:'hard',summary:'Go get it',warmup:'15 min easy + strides',main:`Start controlled — first mile 10-15 sec/mile slower than goal. Trust your fitness and run your own race.`,cooldown:'Walk and celebrate',duration:'Race',purpose:'Execute'}]};
   renderPlanDays(plans[phase]||plans['Base Building']);
 }
 
@@ -1008,20 +1050,17 @@ function renderFallbackPlan(phase,vdot){
 async function generateAIInsight(){
   $('ai-insight').innerHTML='<span style="color:var(--muted);">Generating analysis...</span>';
   try{
-    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'Expert running coach. Give specific actionable advice in 2-3 paragraphs. Encouraging and data-driven. Use <strong> tags for key insights. Under 160 words.',messages:[{role:'user',content:`Analyze and coach: ${buildCtx()}`}]})});
+    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'Expert running coach. Specific, actionable, 2-3 paragraphs. Use <strong> tags. Under 160 words.',messages:[{role:'user',content:`Analyze: ${buildCtx()}`}]})});
     const data=await res.json();
-    $('ai-insight').innerHTML=data.content?.[0]?.text||'Could not generate insight.';
-  }catch{
-    $('ai-insight').innerHTML=`<strong>Great work!</strong> You have ${activitiesData.length} activities loaded. Add a Claude API key to unlock personalized AI coaching.`;
-  }
+    $('ai-insight').innerHTML=data.content?.[0]?.text||'Could not generate.';
+  }catch{$('ai-insight').innerHTML=`<strong>Solid work!</strong> ${activitiesData.length} activities loaded. Add a Claude API key for personalized coaching.`;}
 }
-
 async function askAI(){
   const q=$('ai-question').value.trim();if(!q)return;
   const btn=$('ai-ask-btn');btn.disabled=true;btn.textContent='...';
   $('ai-insight').innerHTML='<span style="color:var(--muted);">Thinking...</span>';
   try{
-    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`Expert running coach. Concise (under 130 words), specific, actionable. Use <strong> for emphasis. Use ${useImperial?'miles':'km'}.`,messages:[{role:'user',content:`${buildCtx()}\n\nQuestion: ${q}`}]})});
+    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`Expert running coach. Concise (under 130 words), specific, actionable. Use <strong>. Use ${useImperial?'miles':'km'}.`,messages:[{role:'user',content:`${buildCtx()}\n\nQuestion: ${q}`}]})});
     const data=await res.json();
     $('ai-insight').innerHTML=data.content?.[0]?.text||'No response.';
   }catch{$('ai-insight').innerHTML='Error connecting to AI.';}
@@ -1033,34 +1072,29 @@ async function askAI(){
 (async function(){
   loadSettings();
   ['setting-age','setting-rhr','setting-mhr'].forEach(id=>{const el=$(id);if(el)el.addEventListener('input',renderZonePreview);});
+  // Set default race date to 3 months from now
+  const d=new Date();d.setMonth(d.getMonth()+3);
+  if($('planner-date'))$('planner-date').value=d.toISOString().split('T')[0];
 
   const params=new URLSearchParams(window.location.search);
   const err=params.get('error');
   if(err){const b=$('error-box');b.textContent=`Connection failed: ${err.replace(/_/g,' ')}`;b.style.display='block';window.history.replaceState({},'','/');}
-
   const token=params.get('token');
   const name=params.get('athlete')?decodeURIComponent(params.get('athlete')):'Athlete';
   if(token){
     localStorage.setItem('strava_token',token);localStorage.setItem('strava_athlete',name);
     window.history.replaceState({},'','/');
     showLoading('Fetching all your activities...','This may take a moment');
-    try{
-      activitiesData=await fetchAllActivities(token);
-      renderAll(name);show('dashboard-screen');hideLoading();
-      generateAIInsight();generateWeeklyPlan();
-    }catch(e){hideLoading();alert('Could not load: '+e.message);}
+    try{activitiesData=await fetchAllActivities(token);renderAll(name);show('dashboard-screen');hideLoading();generateAIInsight();generateWeeklyPlan();}
+    catch(e){hideLoading();alert('Could not load: '+e.message);}
     return;
   }
-
   const saved=localStorage.getItem('strava_token');
   const savedName=localStorage.getItem('strava_athlete')||'Athlete';
   if(saved){
     showLoading('Loading your data...','');
-    try{
-      activitiesData=await fetchAllActivities(saved);
-      renderAll(savedName);show('dashboard-screen');hideLoading();
-      generateAIInsight();generateWeeklyPlan();
-    }catch{hideLoading();localStorage.removeItem('strava_token');}
+    try{activitiesData=await fetchAllActivities(saved);renderAll(savedName);show('dashboard-screen');hideLoading();generateAIInsight();generateWeeklyPlan();}
+    catch{hideLoading();localStorage.removeItem('strava_token');}
   }
 })();
 </script>
