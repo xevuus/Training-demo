@@ -20,22 +20,20 @@
   --blue: #4a9eff;
   --amber: #f5a623;
   --red: #e53935;
+  --purple: #a855f7;
 }
 body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-
-/* SCREENS */
 .screen { display: none; }
 .screen.active { display: block; }
 
-/* CONNECT */
 #connect-screen { min-height: 100vh; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; position: relative; overflow: hidden; }
 #connect-screen.active { display: flex; }
 .bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(252,76,2,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(252,76,2,0.04) 1px, transparent 1px); background-size: 48px 48px; z-index: 0; }
 .bg-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(252,76,2,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 0; }
 .connect-card { position: relative; z-index: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; max-width: 420px; width: 100%; text-align: center; }
-.strava-logo { width: 56px; height: 56px; background: var(--orange); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 26px; font-weight: 700; color: white; font-family: 'DM Mono', monospace; }
+.strava-logo { width: 56px; height: 56px; background: var(--orange); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 22px; font-weight: 700; color: white; font-family: 'DM Mono', monospace; }
 .connect-card h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 0.5rem; }
-.connect-card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
+.connect-card > p { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
 .feature-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 2rem; }
 .pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px; font-size: 0.75rem; color: var(--muted); }
 .btn-connect { width: 100%; background: var(--orange); color: white; border: none; border-radius: 10px; padding: 13px; font-size: 0.95rem; font-weight: 600; font-family: 'Sora', sans-serif; cursor: pointer; transition: opacity 0.2s, transform 0.1s; }
@@ -45,45 +43,62 @@ body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text
 .error-box { background: rgba(229,57,53,0.1); border: 1px solid rgba(229,57,53,0.3); border-radius: 8px; padding: 10px 14px; font-size: 0.78rem; color: #ef9a9a; margin-bottom: 1rem; display: none; }
 .divider { border-top: 1px solid var(--border); margin: 1.5rem 0; }
 
-/* LOADING */
 .loading-overlay { position: fixed; inset: 0; background: var(--bg); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; gap: 1rem; }
 .loading-overlay.active { display: flex; }
 .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--orange); border-radius: 50%; animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-text { font-size: 0.85rem; color: var(--muted); font-family: 'DM Mono', monospace; }
+.loading-detail { font-size: 0.72rem; color: var(--muted); opacity: 0.5; font-family: 'DM Mono', monospace; }
 
-/* TOPBAR */
-.topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 10px; }
 .topbar-left { display: flex; align-items: center; gap: 12px; }
-.topbar-logo { background: var(--orange); color: white; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; font-family: 'DM Mono', monospace; }
+.topbar-logo { background: var(--orange); color: white; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; font-family: 'DM Mono', monospace; flex-shrink: 0; }
 .topbar h2 { font-size: 1rem; font-weight: 600; }
+.topbar-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .athlete-pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px 5px 8px; font-size: 0.8rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 .athlete-avatar { width: 22px; height: 22px; border-radius: 50%; background: var(--orange-dim); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--orange); font-weight: 600; }
-.btn-sm { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.78rem; color: var(--muted); cursor: pointer; font-family: 'Sora', sans-serif; }
+.btn-sm { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.78rem; color: var(--muted); cursor: pointer; font-family: 'Sora', sans-serif; white-space: nowrap; }
 .btn-sm:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
+.unit-toggle { display: flex; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.unit-btn { padding: 5px 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace; cursor: pointer; border: none; background: transparent; color: var(--muted); transition: all 0.15s; }
+.unit-btn.active { background: var(--orange); color: white; }
 
-/* DASHBOARD */
 .dashboard-body { padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
 .demo-notice { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.25); border-radius: 8px; padding: 8px 14px; font-size: 0.75rem; color: var(--amber); margin-bottom: 1.2rem; font-family: 'DM Mono', monospace; }
 
-/* STAT CARDS */
-.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.status-banner { border-radius: 14px; padding: 1.2rem 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border: 1px solid; }
+.status-banner.base { background: rgba(74,158,255,0.08); border-color: rgba(74,158,255,0.25); }
+.status-banner.threshold { background: rgba(245,166,35,0.08); border-color: rgba(245,166,35,0.25); }
+.status-banner.taper { background: rgba(168,85,247,0.08); border-color: rgba(168,85,247,0.25); }
+.status-banner.race { background: rgba(39,201,111,0.08); border-color: rgba(39,201,111,0.25); }
+.status-banner.recovery { background: rgba(229,57,53,0.08); border-color: rgba(229,57,53,0.25); }
+.status-left { display: flex; align-items: center; gap: 14px; }
+.status-icon { font-size: 2rem; line-height: 1; }
+.status-label { font-size: 0.66rem; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.6; margin-bottom: 3px; }
+.status-name { font-size: 1.2rem; font-weight: 600; }
+.status-desc { font-size: 0.78rem; color: var(--muted); margin-top: 3px; max-width: 420px; line-height: 1.5; }
+.status-metrics { display: flex; gap: 20px; flex-wrap: wrap; }
+.status-metric { text-align: center; }
+.status-metric-val { font-size: 1rem; font-weight: 600; font-family: 'DM Mono', monospace; }
+.status-metric-lbl { font-size: 0.6rem; color: var(--muted); font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
 .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem; position: relative; overflow: hidden; }
 .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent, var(--orange)); }
-.stat-label { font-size: 0.7rem; color: var(--muted); font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.stat-label { font-size: 0.68rem; color: var(--muted); font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
 .stat-value { font-size: 1.5rem; font-weight: 600; line-height: 1; }
-.stat-sub { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+.stat-sub { font-size: 0.7rem; color: var(--muted); margin-top: 4px; }
 .stat-card.green { --accent: var(--green); }
 .stat-card.blue { --accent: var(--blue); }
 .stat-card.amber { --accent: var(--amber); }
+.stat-card.purple { --accent: var(--purple); }
 
-/* CHARTS */
 .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
 @media (max-width: 640px) { .charts-grid { grid-template-columns: 1fr; } }
 .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; }
-.chart-title { font-size: 0.7rem; font-family: 'DM Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+.chart-title { font-size: 0.68rem; font-family: 'DM Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
 .bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 100px; }
-.bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
 .bar { width: 100%; border-radius: 4px 4px 0 0; background: var(--orange-dim); transition: height 0.6s cubic-bezier(.34,1.56,.64,1); min-height: 4px; }
 .bar.active { background: var(--orange); }
 .pace-chart { display: flex; align-items: flex-end; gap: 4px; height: 80px; }
@@ -92,47 +107,56 @@ body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text
 .pace-bar.pr { background: var(--green); opacity: 1; }
 .zone-grid { display: flex; flex-direction: column; gap: 8px; }
 .zone-row { display: flex; align-items: center; gap: 10px; }
-.zone-name { font-size: 0.68rem; color: var(--muted); width: 58px; font-family: 'DM Mono', monospace; flex-shrink: 0; }
+.zone-name { font-size: 0.66rem; color: var(--muted); width: 62px; font-family: 'DM Mono', monospace; flex-shrink: 0; }
 .zone-bar-bg { flex: 1; height: 6px; background: var(--surface2); border-radius: 999px; overflow: hidden; }
 .zone-bar-fill { height: 100%; border-radius: 999px; transition: width 0.8s ease; }
-.zone-pct { font-size: 0.68rem; color: var(--muted); width: 32px; text-align: right; font-family: 'DM Mono', monospace; }
+.zone-pct { font-size: 0.66rem; color: var(--muted); width: 32px; text-align: right; font-family: 'DM Mono', monospace; }
 .predictor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .pred-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1rem; }
-.pred-race { font-size: 0.68rem; color: var(--muted); font-family: 'DM Mono', monospace; margin-bottom: 4px; }
+.pred-race { font-size: 0.66rem; color: var(--muted); font-family: 'DM Mono', monospace; margin-bottom: 4px; }
 .pred-time { font-size: 1.1rem; font-weight: 600; }
-.pred-note { font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
+.pred-note { font-size: 0.63rem; color: var(--muted); margin-top: 2px; }
 
-/* AI PANEL */
+.rec-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; margin-bottom: 1.5rem; }
+.rec-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.rec-badge { background: rgba(39,201,111,0.12); color: var(--green); border-radius: 6px; padding: 3px 10px; font-size: 0.68rem; font-weight: 600; font-family: 'DM Mono', monospace; }
+.rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 500px) { .rec-grid { grid-template-columns: 1fr; } }
+.rec-item { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; }
+.rec-day { font-size: 0.66rem; color: var(--muted); font-family: 'DM Mono', monospace; text-transform: uppercase; margin-bottom: 4px; }
+.rec-type { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.rec-detail { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+
 .ai-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; margin-bottom: 1.5rem; }
 .ai-panel-header { display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; }
-.ai-badge { background: var(--orange-dim); color: var(--orange); border-radius: 6px; padding: 3px 10px; font-size: 0.7rem; font-weight: 600; font-family: 'DM Mono', monospace; }
+.ai-badge { background: var(--orange-dim); color: var(--orange); border-radius: 6px; padding: 3px 10px; font-size: 0.68rem; font-weight: 600; font-family: 'DM Mono', monospace; }
 .ai-content { font-size: 0.85rem; color: var(--muted); line-height: 1.75; min-height: 60px; }
 .ai-content strong { color: var(--text); font-weight: 500; }
 .ai-ask-row { display: flex; gap: 8px; margin-top: 1rem; }
-.ai-input { flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 9px 14px; font-size: 0.85rem; color: var(--text); font-family: 'Sora', sans-serif; outline: none; }
+.ai-input { flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 9px 14px; font-size: 0.85rem; color: var(--text); font-family: 'Sora', sans-serif; outline: none; min-width: 0; }
 .ai-input:focus { border-color: var(--orange); }
 .ai-input::placeholder { color: var(--muted); }
-.btn-ask { background: var(--orange); color: white; border: none; border-radius: 8px; padding: 9px 18px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'Sora', sans-serif; white-space: nowrap; }
+.btn-ask { background: var(--orange); color: white; border: none; border-radius: 8px; padding: 9px 18px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'Sora', sans-serif; white-space: nowrap; flex-shrink: 0; }
 .btn-ask:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* ACTIVITIES */
 .activities-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 2rem; }
-.activities-header { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-.activities-header h3 { font-size: 0.72rem; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-.act-cols { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; }
-.activity-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--border); font-size: 0.82rem; align-items: center; }
+.activities-header { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.activities-header h3 { font-size: 0.7rem; font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.activity-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--border); font-size: 0.82rem; align-items: center; transition: background 0.15s; }
 .activity-row:last-child { border-bottom: none; }
 .activity-row:hover { background: var(--surface2); }
-.activity-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.activity-meta { font-size: 0.68rem; color: var(--muted); margin-top: 2px; font-family: 'DM Mono', monospace; display: flex; align-items: center; gap: 6px; }
-.activity-stat { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.78rem; }
+.activity-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 8px; }
+.activity-meta { font-size: 0.66rem; color: var(--muted); margin-top: 2px; font-family: 'DM Mono', monospace; display: flex; align-items: center; gap: 6px; }
+.activity-stat { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.76rem; }
 .activity-stat span { color: var(--text); }
-.badge { border-radius: 4px; padding: 2px 8px; font-size: 0.62rem; font-family: 'DM Mono', monospace; display: inline-block; }
+.badge { border-radius: 4px; padding: 2px 7px; font-size: 0.6rem; font-family: 'DM Mono', monospace; display: inline-block; }
 .badge-run { background: var(--orange-dim); color: var(--orange); }
 .badge-ride { background: rgba(74,158,255,0.12); color: var(--blue); }
 .badge-swim { background: rgba(39,201,111,0.12); color: var(--green); }
 .badge-other { background: var(--surface2); color: var(--muted); }
 @media (max-width: 600px) { .activity-row { grid-template-columns: 1fr 1fr; } .activity-row > *:nth-child(n+4) { display: none; } }
+.show-more-btn { width: 100%; padding: 12px; background: transparent; border: none; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.76rem; font-family: 'DM Mono', monospace; cursor: pointer; }
+.show-more-btn:hover { color: var(--text); }
 </style>
 </head>
 <body>
@@ -140,12 +164,12 @@ body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text
 <div class="loading-overlay" id="loading">
   <div class="spinner"></div>
   <div class="loading-text" id="loading-text">Loading your data...</div>
+  <div class="loading-detail" id="loading-detail"></div>
 </div>
 
-<!-- CONNECT SCREEN -->
+<!-- CONNECT -->
 <div id="connect-screen" class="screen active">
-  <div class="bg-grid"></div>
-  <div class="bg-glow"></div>
+  <div class="bg-grid"></div><div class="bg-glow"></div>
   <div class="connect-card">
     <div class="strava-logo">S/</div>
     <h1>Training Analyzer</h1>
@@ -164,14 +188,18 @@ body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text
   </div>
 </div>
 
-<!-- DASHBOARD SCREEN -->
+<!-- DASHBOARD -->
 <div id="dashboard-screen" class="screen">
   <div class="topbar">
     <div class="topbar-left">
       <div class="topbar-logo">S/</div>
       <h2>Training Analyzer</h2>
     </div>
-    <div style="display:flex;align-items:center;gap:10px;">
+    <div class="topbar-right">
+      <div class="unit-toggle">
+        <button class="unit-btn active" id="btn-imperial" onclick="setUnits('imperial')">MI</button>
+        <button class="unit-btn" id="btn-metric" onclick="setUnits('metric')">KM</button>
+      </div>
       <div class="athlete-pill">
         <div class="athlete-avatar" id="athlete-initials">—</div>
         <span id="athlete-name">Athlete</span>
@@ -181,61 +209,87 @@ body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text
   </div>
 
   <div class="dashboard-body">
-    <div class="demo-notice" id="demo-notice" style="display:none">
-      ⚡ Demo mode — connect Strava above for real insights.
+    <div class="demo-notice" id="demo-notice" style="display:none">⚡ Demo mode — connect Strava for real insights.</div>
+
+    <!-- TRAINING PHASE -->
+    <div class="status-banner base" id="status-banner">
+      <div class="status-left">
+        <div class="status-icon" id="status-icon">⏳</div>
+        <div>
+          <div class="status-label">Training Phase</div>
+          <div class="status-name" id="status-name">Analyzing...</div>
+          <div class="status-desc" id="status-desc">Loading your training data</div>
+        </div>
+      </div>
+      <div class="status-metrics" id="status-metrics"></div>
     </div>
 
+    <!-- STATS -->
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-label">This week</div><div class="stat-value" id="stat-dist">—</div><div class="stat-sub">km distance</div></div>
-      <div class="stat-card green"><div class="stat-label">Avg run pace</div><div class="stat-value" id="stat-pace">—</div><div class="stat-sub">min/km</div></div>
-      <div class="stat-card blue"><div class="stat-label">Training load</div><div class="stat-value" id="stat-load">—</div><div class="stat-sub">ATL (7-day)</div></div>
-      <div class="stat-card amber"><div class="stat-label">Activities</div><div class="stat-value" id="stat-acts">—</div><div class="stat-sub">last 30 days</div></div>
+      <div class="stat-card"><div class="stat-label">This week</div><div class="stat-value" id="stat-dist">—</div><div class="stat-sub" id="stat-dist-sub">mi</div></div>
+      <div class="stat-card green"><div class="stat-label">Avg run pace</div><div class="stat-value" id="stat-pace">—</div><div class="stat-sub" id="stat-pace-sub">min/mi</div></div>
+      <div class="stat-card blue"><div class="stat-label">Training load</div><div class="stat-value" id="stat-load">—</div><div class="stat-sub">ATL 7-day</div></div>
+      <div class="stat-card amber"><div class="stat-label">Last 30 days</div><div class="stat-value" id="stat-acts">—</div><div class="stat-sub">activities</div></div>
+      <div class="stat-card purple"><div class="stat-label">Total loaded</div><div class="stat-value" id="stat-total">—</div><div class="stat-sub">activities</div></div>
     </div>
 
+    <!-- CHARTS -->
     <div class="charts-grid">
       <div class="chart-card">
-        <div class="chart-title">Weekly volume (km) — last 8 weeks</div>
+        <div class="chart-title" id="vol-title">Weekly volume (mi) — last 8 weeks</div>
         <div class="bar-chart" id="volume-chart"></div>
         <div style="display:flex;gap:4px;margin-top:10px;" id="volume-labels"></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Run pace trend (most recent)</div>
+        <div class="chart-title">Run pace trend</div>
         <div class="pace-chart" id="pace-chart"></div>
         <div style="display:flex;gap:8px;margin-top:10px;align-items:center;">
           <div style="width:10px;height:10px;background:var(--green);border-radius:2px;"></div>
-          <span style="font-size:0.63rem;color:var(--muted);font-family:'DM Mono',monospace;">Fastest run</span>
+          <span style="font-size:0.62rem;color:var(--muted);font-family:'DM Mono',monospace;">Fastest</span>
           <div style="width:10px;height:10px;background:var(--blue);border-radius:2px;margin-left:8px;opacity:0.7;"></div>
-          <span style="font-size:0.63rem;color:var(--muted);font-family:'DM Mono',monospace;">Other runs</span>
+          <span style="font-size:0.62rem;color:var(--muted);font-family:'DM Mono',monospace;">Other</span>
         </div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Estimated time in zones (by HR)</div>
+        <div class="chart-title">Time in zones (HR-based)</div>
         <div class="zone-grid" id="zone-chart"></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Race time predictions (Riegel formula)</div>
+        <div class="chart-title">Race time predictions</div>
         <div class="predictor-grid" id="predictor"></div>
       </div>
     </div>
 
+    <!-- WEEKLY PLAN -->
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-badge">THIS WEEK'S PLAN</div>
+        <span style="font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;">AI recommended</span>
+      </div>
+      <div id="rec-content"><div style="font-size:0.85rem;color:var(--muted);">Building your training plan...</div></div>
+    </div>
+
+    <!-- AI COACH -->
     <div class="ai-panel">
       <div class="ai-panel-header">
         <div class="ai-badge">AI COACH</div>
-        <span style="font-size:0.72rem;color:var(--muted);font-family:'DM Mono',monospace;">Powered by Claude</span>
+        <span style="font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;">Powered by Claude</span>
       </div>
       <div class="ai-content" id="ai-insight">Analyzing your training...</div>
       <div class="ai-ask-row">
-        <input class="ai-input" id="ai-question" placeholder="Ask your coach anything — e.g. How do I train for a marathon?" onkeydown="if(event.key==='Enter')askAI()"/>
+        <input class="ai-input" id="ai-question" placeholder="Ask your coach anything..." onkeydown="if(event.key==='Enter')askAI()"/>
         <button class="btn-ask" id="ai-ask-btn" onclick="askAI()">Ask →</button>
       </div>
     </div>
 
+    <!-- ACTIVITIES -->
     <div class="activities-card">
       <div class="activities-header">
-        <h3>Recent activities</h3>
-        <span style="font-size:0.72rem;color:var(--muted);font-family:'DM Mono',monospace;" id="act-count"></span>
+        <h3>Activities</h3>
+        <span style="font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;" id="act-count"></span>
       </div>
       <div id="activities-list"></div>
+      <button class="show-more-btn" id="show-more-btn" onclick="showMoreActivities()" style="display:none">Show more ↓</button>
     </div>
   </div>
 </div>
@@ -244,288 +298,329 @@ body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text
 const CLAUDE_API = 'https://api.anthropic.com/v1/messages';
 let activitiesData = [];
 let isDemo = false;
+let useImperial = true;
+let shownCount = 15;
 
 const $ = id => document.getElementById(id);
 
-function show(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  $(id).classList.add('active');
+// ── UNITS ──
+function mToDisplay(m) { return useImperial ? (m / 1609.34).toFixed(1) : (m / 1000).toFixed(1); }
+function distUnit() { return useImperial ? 'mi' : 'km'; }
+function paceUnit() { return useImperial ? 'min/mi' : 'min/km'; }
+function speedToPace(mps) {
+  if (!mps || mps <= 0) return '—';
+  const factor = useImperial ? 1609.34 : 1000;
+  const sec = factor / mps;
+  const m = Math.floor(sec / 60), s = Math.round(sec % 60);
+  return `${m}:${s.toString().padStart(2,'0')}`;
 }
-function showLoading(txt) { $('loading-text').textContent = txt; $('loading').classList.add('active'); }
+function speedToRide(mps) {
+  return useImperial ? (mps * 2.23694).toFixed(1) + ' mph' : (mps * 3.6).toFixed(1) + ' kph';
+}
+function secToHMS(s) {
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.round(s%60);
+  return h > 0 ? `${h}:${m.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}` : `${m}:${sec.toString().padStart(2,'0')}`;
+}
+function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
+function initials(name) { return name.split(' ').filter(Boolean).map(w=>w[0]).join('').toUpperCase().slice(0,2); }
+
+function setUnits(u) {
+  useImperial = u === 'imperial';
+  $('btn-imperial').classList.toggle('active', useImperial);
+  $('btn-metric').classList.toggle('active', !useImperial);
+  if (activitiesData.length) renderAll(localStorage.getItem('strava_athlete') || 'Athlete');
+}
+
+// ── SCREENS ──
+function show(id) { document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); $(id).classList.add('active'); }
+function showLoading(t,d='') { $('loading-text').textContent=t; $('loading-detail').textContent=d; $('loading').classList.add('active'); }
 function hideLoading() { $('loading').classList.remove('active'); }
+function connectStrava() { window.location.href='/auth/strava'; }
+function disconnect() { localStorage.removeItem('strava_token'); localStorage.removeItem('strava_athlete'); activitiesData=[]; isDemo=false; show('connect-screen'); }
 
-function connectStrava() {
-  window.location.href = '/auth/strava';
+// ── FETCH ALL (paginated, newest first) ──
+async function fetchAllActivities(token) {
+  let all = [], page = 1;
+  while (page <= 5) {
+    $('loading-detail').textContent = `Page ${page}… (${all.length} activities loaded)`;
+    const res = await fetch(`https://www.strava.com/api/v3/athlete/activities?per_page=100&page=${page}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    if (!res.ok) break;
+    const batch = await res.json();
+    if (!Array.isArray(batch) || batch.length === 0) break;
+    all = all.concat(batch);
+    if (batch.length < 100) break;
+    page++;
+  }
+  return all.sort((a,b) => new Date(b.start_date_local) - new Date(a.start_date_local));
 }
 
-function disconnect() {
-  localStorage.removeItem('strava_token');
-  localStorage.removeItem('strava_athlete');
-  isDemo = false;
-  show('connect-screen');
-}
-
-// ── HELPERS ──
-function mToKm(m) { return (m / 1000).toFixed(1); }
-function secToMinKm(mps) { if (!mps) return '—'; const s = 1000 / mps; const m = Math.floor(s / 60); const sec = Math.round(s % 60); return `${m}:${sec.toString().padStart(2, '0')}`; }
-function secToHMS(s) { const h = Math.floor(s / 3600); const m = Math.floor((s % 3600) / 60); const sec = Math.round(s % 60); return h > 0 ? `${h}:${m.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}` : `${m}:${sec.toString().padStart(2,'0')}`; }
-function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); }
-function getInitials(name) { return name.split(' ').filter(Boolean).map(w => w[0]).join('').toUpperCase().slice(0, 2); }
-
-// ── FETCH STRAVA ──
-async function fetchActivities(token) {
-  const after = Math.floor((Date.now() / 1000) - 90 * 86400);
-  const res = await fetch(`https://www.strava.com/api/v3/athlete/activities?per_page=60&after=${after}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  if (!res.ok) throw new Error('Failed to fetch activities');
-  return res.json();
-}
-
-// ── DEMO DATA ──
+// ── DEMO ──
 function generateDemoData() {
-  const typePool = ['Run','Run','Run','Ride','Run','Swim','Run','Run','Ride','Run','Run','Run','Ride','Run','Run','Run'];
-  const namePool = ['Morning Run','Tempo Tuesday','Easy Recovery','Cycling Session','Long Run','Pool Session','Interval Training','Evening Jog','Hill Climb Ride','Threshold Run','Base Building','Track 400s','Endurance Ride','Fartlek Run','Sunday Long Run','Recovery Jog'];
+  const types = ['Run','Run','Run','Ride','Run','Swim','Run','Run','Ride','Run','Run','Run','Ride','Run','Run','Run','Run','Ride','Run','Run'];
+  const names = ['Morning Run','Tempo Tuesday','Easy Recovery','Cycling Session','Long Run','Pool Session','Interval Training','Evening Jog','Hill Climb','Threshold Run','Base Building','Track 400s','Endurance Ride','Fartlek Run','Sunday Long Run','Recovery Jog','Progression Run','Zwift Ride','Speed Work','Easy Miles'];
   const now = Date.now();
-  return typePool.map((type, i) => {
-    const dist = type === 'Run' ? 5000 + Math.random() * 18000 : type === 'Ride' ? 30000 + Math.random() * 50000 : 1500 + Math.random() * 2000;
-    const spd = type === 'Run' ? 3.2 + Math.random() * 1.2 : type === 'Ride' ? 8 + Math.random() * 5 : 1.2 + Math.random() * 0.3;
-    return {
-      id: i, name: namePool[i], type, sport_type: type,
-      distance: dist, moving_time: dist / spd, elapsed_time: dist / spd * 1.05,
-      average_speed: spd, average_heartrate: 128 + Math.random() * 45,
-      max_heartrate: 162 + Math.random() * 25,
-      start_date_local: new Date(now - i * 2.3 * 86400000).toISOString(),
-      total_elevation_gain: Math.random() * 250
-    };
+  return types.map((type,i) => {
+    const dist = type==='Run' ? 4800+Math.random()*19000 : type==='Ride' ? 28000+Math.random()*55000 : 1500+Math.random()*2000;
+    const spd = type==='Run' ? 2.8+Math.random()*1.4 : type==='Ride' ? 7+Math.random()*6 : 1.2+Math.random()*0.3;
+    return { id:i, name:names[i], type, sport_type:type, distance:dist, moving_time:dist/spd, elapsed_time:dist/spd*1.05, average_speed:spd, average_heartrate:125+Math.random()*50, max_heartrate:158+Math.random()*30, start_date_local:new Date(now-i*2.1*86400000).toISOString(), total_elevation_gain:Math.random()*280 };
   });
 }
+function loadDemo() { isDemo=true; activitiesData=generateDemoData(); renderAll('Demo Athlete'); show('dashboard-screen'); $('demo-notice').style.display='block'; generateAIInsight(); generateRecommendations(); }
 
-function loadDemo() {
-  isDemo = true;
-  activitiesData = generateDemoData();
-  renderDashboard('Demo Athlete');
-  show('dashboard-screen');
-  $('demo-notice').style.display = 'block';
-  generateAIInsight();
+// ── TRAINING PHASE ──
+function detectPhase(activities) {
+  const runs = activities.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
+  if (runs.length < 3) return { phase:'Insufficient Data', icon:'❓', cls:'base', desc:'Log at least 3 runs to detect your training phase.', metrics:[] };
+
+  const now = Date.now();
+  const recent = runs.filter(a=>new Date(a.start_date_local) > new Date(now-21*86400000));
+  const prev   = runs.filter(a=>{ const d=new Date(a.start_date_local); return d>new Date(now-42*86400000) && d<=new Date(now-21*86400000); });
+
+  const recentVol = recent.reduce((s,r)=>s+r.distance,0)/1000;
+  const prevVol   = prev.reduce((s,r)=>s+r.distance,0)/1000;
+
+  const allSpds = runs.filter(r=>r.average_speed>0).map(r=>r.average_speed);
+  const avgSpd = allSpds.reduce((s,v)=>s+v,0)/(allSpds.length||1);
+  const speedRuns = recent.filter(r=>r.average_speed > avgSpd*1.1);
+  const speedPct = recent.length > 0 ? speedRuns.length/recent.length : 0;
+  const weeklyVol = recentVol / 3;
+
+  let phase, icon, cls, desc;
+  if (recentVol < (prevVol||1)*0.6 && speedPct > 0.25) {
+    phase='Taper / Race Ready'; icon='🏁'; cls='taper';
+    desc='Volume dropping, intensity up — classic pre-race taper. Rest up and trust your training.';
+  } else if (speedPct > 0.35 && weeklyVol > 30) {
+    phase='Peak Fitness'; icon='⚡'; cls='race';
+    desc='High volume AND intensity — you\'re in peak shape. Prioritize recovery between hard efforts.';
+  } else if (speedPct > 0.25 && weeklyVol >= 20) {
+    phase='Threshold Building'; icon='🔥'; cls='threshold';
+    desc='Good mix of volume and speed work. You\'re building strong race-specific fitness.';
+  } else if (recentVol < 15 || recent.length < 2) {
+    phase='Recovery / Off Season'; icon='💤'; cls='recovery';
+    desc='Low recent volume. Could be recovery, off-season, or returning from a break — ease back in.';
+  } else {
+    phase='Base Building'; icon='🏗️'; cls='base';
+    desc='Strong aerobic volume, controlled intensity. You\'re building the engine for future speed work.';
+  }
+
+  const metrics = [
+    { val: mToDisplay(recentVol*1000)+' '+distUnit(), lbl:'3-wk vol' },
+    { val: Math.round(speedPct*100)+'%', lbl:'speed runs' },
+    { val: recent.length, lbl:'recent acts' },
+  ];
+  return { phase, icon, cls, desc, metrics };
 }
 
-// ── RENDER ──
-function renderDashboard(athleteName) {
+// ── MAIN RENDER ──
+function renderAll(athleteName) {
   $('athlete-name').textContent = athleteName;
-  $('athlete-initials').textContent = getInitials(athleteName);
+  $('athlete-initials').textContent = initials(athleteName);
 
-  const runs = activitiesData.filter(a => ['Run','VirtualRun'].includes(a.type || a.sport_type));
-  const weekAgo = new Date(Date.now() - 7 * 86400000);
-  const monthAgo = new Date(Date.now() - 30 * 86400000);
-  const weekActs = activitiesData.filter(a => new Date(a.start_date_local) > weekAgo);
-  const monthActs = activitiesData.filter(a => new Date(a.start_date_local) > monthAgo);
+  const runs = activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
+  const now = Date.now();
+  const weekAgo  = new Date(now - 7*86400000);
+  const monthAgo = new Date(now - 30*86400000);
+  const weekActs  = activitiesData.filter(a=>new Date(a.start_date_local)>weekAgo);
+  const monthActs = activitiesData.filter(a=>new Date(a.start_date_local)>monthAgo);
 
-  const weekDist = weekActs.reduce((s, a) => s + (a.distance || 0), 0) / 1000;
-  $('stat-dist').textContent = weekDist.toFixed(1);
-
-  const runSpds = runs.filter(r => r.average_speed > 0);
-  const avgSpd = runSpds.length ? runSpds.reduce((s, r) => s + r.average_speed, 0) / runSpds.length : 0;
-  $('stat-pace').textContent = avgSpd > 0 ? secToMinKm(avgSpd) : '—';
-
-  const atl = Math.round(weekActs.reduce((s, a) => s + (a.moving_time || 0) / 60 * ((a.average_heartrate || 140) / 185), 0));
-  $('stat-load').textContent = atl || '—';
+  // Stat cards
+  $('stat-dist').textContent = mToDisplay(weekActs.reduce((s,a)=>s+(a.distance||0),0));
+  $('stat-dist-sub').textContent = distUnit() + ' this week';
+  const runSpds = runs.filter(r=>r.average_speed>0).slice(0,20);
+  const avgSpd = runSpds.length ? runSpds.reduce((s,r)=>s+r.average_speed,0)/runSpds.length : 0;
+  $('stat-pace').textContent = avgSpd>0 ? speedToPace(avgSpd) : '—';
+  $('stat-pace-sub').textContent = paceUnit();
+  $('stat-load').textContent = Math.round(weekActs.reduce((s,a)=>s+(a.moving_time||0)/60*((a.average_heartrate||140)/185),0)) || '—';
   $('stat-acts').textContent = monthActs.length;
+  $('stat-total').textContent = activitiesData.length;
 
+  // Training phase banner
+  const ph = detectPhase(activitiesData);
+  const banner = $('status-banner');
+  banner.className = `status-banner ${ph.cls}`;
+  $('status-icon').textContent = ph.icon;
+  $('status-name').textContent = ph.phase;
+  $('status-desc').textContent = ph.desc;
+  $('status-metrics').innerHTML = ph.metrics.map(m=>`<div class="status-metric"><div class="status-metric-val">${m.val}</div><div class="status-metric-lbl">${m.lbl}</div></div>`).join('');
+
+  // Charts
   renderVolumeChart();
   renderPaceChart(runs);
   renderZones(runs);
   renderPredictor(runs);
-  renderActivities(activitiesData.slice(0, 10));
-  $('act-count').textContent = `${activitiesData.length} loaded`;
+  $('vol-title').textContent = `Weekly volume (${distUnit()}) — last 8 weeks`;
+
+  // Activities
+  shownCount = 15;
+  renderActivities();
 }
 
 function renderVolumeChart() {
-  const weeks = Array.from({ length: 8 }, (_, i) => {
-    const end = new Date(Date.now() - i * 7 * 86400000);
-    const start = new Date(end - 7 * 86400000);
-    const dist = activitiesData.filter(a => { const d = new Date(a.start_date_local); return d >= start && d < end; }).reduce((s, a) => s + (a.distance || 0) / 1000, 0);
-    return { dist: parseFloat(dist.toFixed(1)), label: start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).split(' ')[0] };
+  const weeks = Array.from({length:8},(_,i)=>{
+    const end   = new Date(Date.now()-i*7*86400000);
+    const start = new Date(+end-7*86400000);
+    const dist  = activitiesData.filter(a=>{const d=new Date(a.start_date_local);return d>=start&&d<end;}).reduce((s,a)=>s+(a.distance||0),0);
+    return { dist: parseFloat(mToDisplay(dist)), lbl: start.toLocaleDateString('en-US',{month:'short',day:'numeric'}).split(' ')[0] };
   }).reverse();
-
-  const maxD = Math.max(...weeks.map(w => w.dist), 1);
-  $('volume-chart').innerHTML = weeks.map((w, i) => `<div class="bar-wrap"><div class="bar${i === weeks.length - 1 ? ' active' : ''}" style="height:${Math.max(w.dist / maxD * 100, 4)}%" title="${w.dist}km"></div></div>`).join('');
-  $('volume-labels').innerHTML = weeks.map(w => `<div style="flex:1;text-align:center;font-size:0.56rem;color:var(--muted);font-family:'DM Mono',monospace;">${w.label}</div>`).join('');
+  const maxD = Math.max(...weeks.map(w=>w.dist),1);
+  $('volume-chart').innerHTML = weeks.map((w,i)=>`<div class="bar-wrap"><div class="bar${i===weeks.length-1?' active':''}" style="height:${Math.max(w.dist/maxD*100,4)}%" title="${w.dist} ${distUnit()}"></div></div>`).join('');
+  $('volume-labels').innerHTML = weeks.map(w=>`<div style="flex:1;text-align:center;font-size:0.55rem;color:var(--muted);font-family:'DM Mono',monospace;">${w.lbl}</div>`).join('');
 }
 
 function renderPaceChart(runs) {
-  const recent = runs.slice(0, 14).reverse();
-  if (!recent.length) { $('pace-chart').innerHTML = '<span style="font-size:0.78rem;color:var(--muted);">No run data</span>'; return; }
-  const paces = recent.map(r => r.average_speed > 0 ? 1000 / r.average_speed : null).filter(Boolean);
-  const minP = Math.min(...paces), maxP = Math.max(...paces);
-  $('pace-chart').innerHTML = recent.map(r => {
-    const pace = r.average_speed > 0 ? 1000 / r.average_speed : null;
-    if (!pace) return '<div class="pace-bar-wrap"><div class="pace-bar" style="height:4%"></div></div>';
-    const pct = maxP === minP ? 60 : ((maxP - pace) / (maxP - minP)) * 80 + 15;
-    const isPR = pace === minP;
-    return `<div class="pace-bar-wrap"><div class="pace-bar${isPR ? ' pr' : ''}" style="height:${pct.toFixed(0)}%" title="${secToMinKm(r.average_speed)}/km on ${fmtDate(r.start_date_local)}"></div></div>`;
+  const recent = runs.slice(0,16).reverse();
+  if (!recent.length) { $('pace-chart').innerHTML='<span style="font-size:0.78rem;color:var(--muted);">No run data</span>'; return; }
+  const paces = recent.map(r=>r.average_speed>0?1/r.average_speed:null).filter(Boolean);
+  const minP=Math.min(...paces), maxP=Math.max(...paces);
+  $('pace-chart').innerHTML = recent.map(r=>{
+    const p = r.average_speed>0 ? 1/r.average_speed : null;
+    if (!p) return '<div class="pace-bar-wrap"><div class="pace-bar" style="height:4%"></div></div>';
+    const pct = maxP===minP ? 60 : ((maxP-p)/(maxP-minP))*80+15;
+    return `<div class="pace-bar-wrap"><div class="pace-bar${p===minP?' pr':''}" style="height:${pct.toFixed(0)}%" title="${speedToPace(r.average_speed)} ${paceUnit()} · ${fmtDate(r.start_date_local)}"></div></div>`;
   }).join('');
 }
 
 function renderZones(runs) {
-  const zones = [
-    { name: 'Z1 Easy', time: 0, color: '#4a9eff' },
-    { name: 'Z2 Aerobic', time: 0, color: '#27c96f' },
-    { name: 'Z3 Tempo', time: 0, color: '#f5a623' },
-    { name: 'Z4 Threshold', time: 0, color: '#FC4C02' },
-    { name: 'Z5 VO2max', time: 0, color: '#e53935' },
-  ];
-  runs.forEach(r => {
-    const hr = r.average_heartrate || 140, t = r.moving_time || 0;
-    if (hr < 120) zones[0].time += t;
-    else if (hr < 140) zones[1].time += t;
-    else if (hr < 156) zones[2].time += t;
-    else if (hr < 171) zones[3].time += t;
-    else zones[4].time += t;
-  });
-  const total = zones.reduce((s, z) => s + z.time, 0) || 1;
-  $('zone-chart').innerHTML = zones.map(z => {
-    const pct = Math.round(z.time / total * 100);
-    return `<div class="zone-row"><div class="zone-name">${z.name}</div><div class="zone-bar-bg"><div class="zone-bar-fill" style="width:${pct}%;background:${z.color}"></div></div><div class="zone-pct">${pct}%</div></div>`;
-  }).join('');
+  const zones=[{name:'Z1 Easy',t:0,c:'#4a9eff'},{name:'Z2 Aerobic',t:0,c:'#27c96f'},{name:'Z3 Tempo',t:0,c:'#f5a623'},{name:'Z4 Threshold',t:0,c:'#FC4C02'},{name:'Z5 VO2max',t:0,c:'#e53935'}];
+  runs.forEach(r=>{ const hr=r.average_heartrate||140,t=r.moving_time||0; if(hr<120)zones[0].t+=t; else if(hr<140)zones[1].t+=t; else if(hr<156)zones[2].t+=t; else if(hr<171)zones[3].t+=t; else zones[4].t+=t; });
+  const total=zones.reduce((s,z)=>s+z.t,0)||1;
+  $('zone-chart').innerHTML=zones.map(z=>`<div class="zone-row"><div class="zone-name">${z.name}</div><div class="zone-bar-bg"><div class="zone-bar-fill" style="width:${Math.round(z.t/total*100)}%;background:${z.c}"></div></div><div class="zone-pct">${Math.round(z.t/total*100)}%</div></div>`).join('');
 }
 
 function renderPredictor(runs) {
-  const eligible = runs.filter(r => r.average_speed > 0 && r.distance > 3000);
-  if (!eligible.length) { $('predictor').innerHTML = '<div style="color:var(--muted);font-size:0.8rem;grid-column:1/-1;">Need at least one run over 3km</div>'; return; }
-  const ref = eligible.reduce((best, r) => r.distance > best.distance ? r : best, eligible[0]);
-  const refPace = ref.moving_time / (ref.distance / 1000);
-  const races = [{ name: '5K', km: 5, e: 1.06 }, { name: '10K', km: 10, e: 1.07 }, { name: 'Half', km: 21.0975, e: 1.125 }, { name: 'Marathon', km: 42.195, e: 1.15 }];
-  $('predictor').innerHTML = races.map(r => {
-    const secs = refPace * Math.pow(r.km / (ref.distance / 1000), r.e) * r.km;
-    return `<div class="pred-card"><div class="pred-race">${r.name}</div><div class="pred-time">${secToHMS(secs)}</div><div class="pred-note">Riegel estimate</div></div>`;
+  const elig = runs.filter(r=>r.average_speed>0&&r.distance>3000);
+  if (!elig.length) { $('predictor').innerHTML='<div style="color:var(--muted);font-size:0.8rem;grid-column:1/-1;">Need a run over 2 miles</div>'; return; }
+  const ref = elig.reduce((b,r)=>r.distance>b.distance?r:b,elig[0]);
+  const refPace = ref.moving_time/(ref.distance/1000);
+  [['5K',5,1.06],['10K',10,1.07],['Half',21.0975,1.125],['Marathon',42.195,1.15]].forEach(([name,km,e])=>{
+    // already inserted below
+  });
+  $('predictor').innerHTML = [['5K',5,1.06],['10K',10,1.07],['Half',21.0975,1.125],['Marathon',42.195,1.15]].map(([name,km,e])=>{
+    const secs = refPace * Math.pow(km/(ref.distance/1000),e) * km;
+    return `<div class="pred-card"><div class="pred-race">${name}</div><div class="pred-time">${secToHMS(secs)}</div><div class="pred-note">Riegel estimate</div></div>`;
   }).join('');
 }
 
-function renderActivities(acts) {
-  if (!acts.length) { $('activities-list').innerHTML = '<div style="padding:1.5rem;color:var(--muted);font-size:0.85rem;">No activities found.</div>'; return; }
-  $('activities-list').innerHTML = acts.map(a => {
-    const type = a.type || a.sport_type || 'Other';
-    const badgeClass = type === 'Run' || type === 'VirtualRun' ? 'badge-run' : type === 'Ride' || type === 'VirtualRide' ? 'badge-ride' : type === 'Swim' ? 'badge-swim' : 'badge-other';
-    const pace = (type === 'Run' && a.average_speed > 0) ? secToMinKm(a.average_speed) + '/km' : type === 'Ride' ? ((a.average_speed || 0) * 3.6).toFixed(1) + 'km/h' : '—';
-    const hr = a.average_heartrate ? Math.round(a.average_heartrate) + ' bpm' : '—';
+function renderActivities() {
+  const acts = activitiesData.slice(0, shownCount);
+  if (!acts.length) { $('activities-list').innerHTML='<div style="padding:1.5rem;color:var(--muted);font-size:0.85rem;">No activities found.</div>'; return; }
+  $('activities-list').innerHTML = acts.map(a=>{
+    const type = a.type||a.sport_type||'Other';
+    const isRun  = ['Run','VirtualRun'].includes(type);
+    const isRide = ['Ride','VirtualRide','EBikeRide'].includes(type);
+    const badgeCls = isRun?'badge-run':isRide?'badge-ride':type==='Swim'?'badge-swim':'badge-other';
+    const speed = isRun ? speedToPace(a.average_speed)+' '+paceUnit() : isRide ? speedToRide(a.average_speed) : '—';
+    const hr = a.average_heartrate ? Math.round(a.average_heartrate)+' bpm' : '—';
     return `<div class="activity-row">
-      <div><div class="activity-name">${a.name}</div><div class="activity-meta"><span class="badge ${badgeClass}">${type}</span>${fmtDate(a.start_date_local)}</div></div>
-      <div class="activity-stat"><span>${mToKm(a.distance)}</span> km</div>
+      <div><div class="activity-name">${a.name}</div><div class="activity-meta"><span class="badge ${badgeCls}">${type}</span>${fmtDate(a.start_date_local)}</div></div>
+      <div class="activity-stat"><span>${mToDisplay(a.distance)}</span> ${distUnit()}</div>
       <div class="activity-stat"><span>${secToHMS(a.moving_time)}</span></div>
-      <div class="activity-stat"><span>${pace}</span></div>
+      <div class="activity-stat"><span>${speed}</span></div>
       <div class="activity-stat"><span>${hr}</span></div>
     </div>`;
   }).join('');
+  const btn = $('show-more-btn');
+  if (activitiesData.length > shownCount) {
+    btn.style.display='block';
+    btn.textContent=`Show more (${activitiesData.length-shownCount} remaining) ↓`;
+  } else { btn.style.display='none'; }
+  $('act-count').textContent=`Showing ${Math.min(shownCount,activitiesData.length)} of ${activitiesData.length}`;
 }
 
+function showMoreActivities() { shownCount+=20; renderActivities(); }
+
 // ── AI ──
-function buildContext() {
-  const runs = activitiesData.filter(a => ['Run','VirtualRun'].includes(a.type || a.sport_type));
-  const totalKm = (activitiesData.reduce((s, a) => s + (a.distance || 0), 0) / 1000).toFixed(0);
-  const avgHR = runs.length ? Math.round(runs.reduce((s, r) => s + (r.average_heartrate || 0), 0) / runs.length) : 'n/a';
-  const weekAgo = new Date(Date.now() - 7 * 86400000);
-  const weekKm = (activitiesData.filter(a => new Date(a.start_date_local) > weekAgo).reduce((s, a) => s + (a.distance || 0), 0) / 1000).toFixed(1);
-  const runSpds = runs.filter(r => r.average_speed > 0);
-  const avgPace = runSpds.length ? secToMinKm(runSpds.reduce((s, r) => s + r.average_speed, 0) / runSpds.length) : 'n/a';
-  return `Athlete stats (last 90 days): ${activitiesData.length} activities, ${runs.length} runs, ${totalKm}km total, ${weekKm}km this week, avg run pace ${avgPace}/km, avg HR ${avgHR}bpm. Recent: ${activitiesData.slice(0,4).map(a=>a.name).join(', ')}.`;
+function buildCtx() {
+  const runs = activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
+  const ph = detectPhase(activitiesData);
+  const totalDist = activitiesData.reduce((s,a)=>s+(a.distance||0),0);
+  const weekDist  = activitiesData.filter(a=>new Date(a.start_date_local)>new Date(Date.now()-7*86400000)).reduce((s,a)=>s+(a.distance||0),0);
+  const runSpds = runs.filter(r=>r.average_speed>0);
+  const avgSpd = runSpds.length ? runSpds.reduce((s,r)=>s+r.average_speed,0)/runSpds.length : 0;
+  const avgHR = runs.length ? Math.round(runs.reduce((s,r)=>s+(r.average_heartrate||0),0)/runs.length) : 'unknown';
+  return `Athlete: ${activitiesData.length} total activities, ${runs.length} runs, ${mToDisplay(totalDist)} ${distUnit()} total, ${mToDisplay(weekDist)} ${distUnit()} this week, avg pace ${speedToPace(avgSpd)} ${paceUnit()}, avg HR ${avgHR}bpm. Phase: ${ph.phase}. ${ph.desc} Recent: ${activitiesData.slice(0,5).map(a=>a.name).join(', ')}.`;
 }
 
 async function generateAIInsight() {
-  $('ai-insight').innerHTML = '<span style="color:var(--muted);">Generating your training analysis...</span>';
+  $('ai-insight').innerHTML='<span style="color:var(--muted);">Generating analysis...</span>';
   try {
-    const res = await fetch(CLAUDE_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: 'You are an expert running coach and sports scientist. Analyze training data and give specific, actionable advice in 2-3 short paragraphs. Be encouraging, precise, and data-driven. Use <strong> tags around key numbers or insights. Keep it under 160 words total.',
-        messages: [{ role: 'user', content: `Analyze and give coaching advice for this athlete: ${buildContext()}` }]
-      })
-    });
+    const res = await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'You are an expert running coach. Give specific, actionable coaching advice in 2-3 short paragraphs. Be encouraging and data-driven. Use <strong> tags for key insights. Under 160 words.',messages:[{role:'user',content:`Analyze and coach: ${buildCtx()}`}]})});
     const data = await res.json();
     $('ai-insight').innerHTML = data.content?.[0]?.text || 'Could not generate insight.';
   } catch {
-    $('ai-insight').innerHTML = `<strong>Looking good!</strong> You have ${activitiesData.length} activities in the last 90 days. Keep consistent — add the Claude API key to get personalized AI coaching insights tailored to your exact data.`;
+    $('ai-insight').innerHTML=`<strong>Great consistency!</strong> You have ${activitiesData.length} activities loaded. Add a Claude API key to unlock personalized AI coaching insights based on your exact data.`;
+  }
+}
+
+async function generateRecommendations() {
+  $('rec-content').innerHTML='<div style="font-size:0.85rem;color:var(--muted);">Building your personalized plan...</div>';
+  const ph = detectPhase(activitiesData);
+  try {
+    const res = await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`You are an expert running coach. Generate a 4-workout weekly plan. Respond ONLY with valid JSON, no markdown:
+{"workouts":[{"day":"Monday","type":"Easy Run","detail":"4 miles easy, HR zone 2"},{"day":"Wednesday","type":"Tempo","detail":"6 miles with 3 at tempo"},{"day":"Friday","type":"Rest","detail":"Full rest or yoga"},{"day":"Sunday","type":"Long Run","detail":"10 miles easy"}]}`,messages:[{role:'user',content:`Generate a weekly plan. ${buildCtx()} Phase: ${ph.phase}. Use ${useImperial?'miles':'km'}.`}]})});
+    const data = await res.json();
+    const text = (data.content?.[0]?.text||'').replace(/```json|```/g,'').trim();
+    const parsed = JSON.parse(text);
+    $('rec-content').innerHTML=`<div class="rec-grid">${parsed.workouts.map(w=>`<div class="rec-item"><div class="rec-day">${w.day}</div><div class="rec-type">${w.type}</div><div class="rec-detail">${w.detail}</div></div>`).join('')}</div>`;
+  } catch {
+    const u = distUnit();
+    const plans = {
+      'Base Building':[{day:'Monday',type:'Easy Run',detail:`4-5 ${u} conversational pace, HR zone 2`},{day:'Wednesday',type:'Medium Run',detail:`6-7 ${u} steady with last mile faster`},{day:'Friday',type:'Rest / Cross-train',detail:'Light activity or full rest'},{day:'Sunday',type:'Long Run',detail:`9-11 ${u} easy aerobic effort`}],
+      'Threshold Building':[{day:'Tuesday',type:'Tempo Run',detail:`6 ${u} with 3 ${u} at comfortably hard pace`},{day:'Thursday',type:'Intervals',detail:`5×1000m at 5K effort, 90s rest`},{day:'Saturday',type:'Easy Run',detail:`4 ${u} recovery effort`},{day:'Sunday',type:'Long Run',detail:`10-12 ${u} easy to moderate`}],
+      'Taper / Race Ready':[{day:'Monday',type:'Easy Shakeout',detail:`3 ${u} very easy, stay loose`},{day:'Wednesday',type:'Strides',detail:`4 ${u} easy with 6×20s race-pace strides`},{day:'Friday',type:'Rest',detail:'Full rest, stay off your feet'},{day:'Sunday',type:'Race Day 🏁',detail:'Trust your training and go get it!'}],
+      'Peak Fitness':[{day:'Tuesday',type:'VO2max Intervals',detail:`6×800m at hard effort, 2min rest`},{day:'Thursday',type:'Threshold Run',detail:`7 ${u} with 4 ${u} at tempo`},{day:'Saturday',type:'Easy Recovery',detail:`4 ${u} very easy`},{day:'Sunday',type:'Long Run',detail:`12-14 ${u} with last 3 at marathon effort`}],
+      'Recovery / Off Season':[{day:'Tuesday',type:'Easy Jog',detail:`3-4 ${u} very easy, just move`},{day:'Thursday',type:'Cross-train',detail:'Bike, swim, or hike — keep it fun'},{day:'Saturday',type:'Easy Run',detail:`4-5 ${u} no pressure, enjoy it`},{day:'Sunday',type:'Rest',detail:'Full rest — you\'ve earned it'}],
+    };
+    const fallback = plans[ph.phase] || plans['Base Building'];
+    $('rec-content').innerHTML=`<div class="rec-grid">${fallback.map(w=>`<div class="rec-item"><div class="rec-day">${w.day}</div><div class="rec-type">${w.type}</div><div class="rec-detail">${w.detail}</div></div>`).join('')}</div>`;
   }
 }
 
 async function askAI() {
-  const q = $('ai-question').value.trim();
-  if (!q) return;
-  const btn = $('ai-ask-btn');
-  btn.disabled = true; btn.textContent = '...';
-  $('ai-insight').innerHTML = '<span style="color:var(--muted);">Thinking...</span>';
+  const q=$('ai-question').value.trim(); if(!q)return;
+  const btn=$('ai-ask-btn'); btn.disabled=true; btn.textContent='...';
+  $('ai-insight').innerHTML='<span style="color:var(--muted);">Thinking...</span>';
   try {
-    const res = await fetch(CLAUDE_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: 'You are an expert running coach. Answer the athlete\'s question using their data. Be specific, actionable, and concise (under 130 words). Use <strong> for emphasis.',
-        messages: [{ role: 'user', content: `${buildContext()}\n\nQuestion: ${q}` }]
-      })
-    });
-    const data = await res.json();
-    $('ai-insight').innerHTML = data.content?.[0]?.text || 'No response.';
-  } catch {
-    $('ai-insight').innerHTML = 'Error connecting to AI. Check your API configuration.';
-  }
-  btn.disabled = false; btn.textContent = 'Ask →';
-  $('ai-question').value = '';
+    const res=await fetch(CLAUDE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`Expert running coach. Answer concisely (under 130 words), specifically, actionably. Use <strong> for emphasis. Use ${useImperial?'miles':'km'}.`,messages:[{role:'user',content:`${buildCtx()}\n\nQuestion: ${q}`}]})});
+    const data=await res.json();
+    $('ai-insight').innerHTML=data.content?.[0]?.text||'No response.';
+  } catch { $('ai-insight').innerHTML='Error connecting to AI.'; }
+  btn.disabled=false; btn.textContent='Ask →';
+  $('ai-question').value='';
 }
 
 // ── INIT ──
-(function init() {
+(async function() {
   const params = new URLSearchParams(window.location.search);
-
-  // Error from OAuth
   const err = params.get('error');
-  if (err) {
-    const box = $('error-box');
-    box.textContent = `Connection failed: ${err.replace(/_/g, ' ')}. Please try again.`;
-    box.style.display = 'block';
-    window.history.replaceState({}, '', '/');
-  }
+  if (err) { const b=$('error-box'); b.textContent=`Connection failed: ${err.replace(/_/g,' ')}. Try again.`; b.style.display='block'; window.history.replaceState({},'','/'); }
 
-  // Token returned from our server after OAuth
   const token = params.get('token');
-  const athleteName = params.get('athlete') ? decodeURIComponent(params.get('athlete')) : 'Athlete';
+  const name  = params.get('athlete') ? decodeURIComponent(params.get('athlete')) : 'Athlete';
   if (token) {
     localStorage.setItem('strava_token', token);
-    localStorage.setItem('strava_athlete', athleteName);
-    window.history.replaceState({}, '', '/');
-    showLoading('Fetching your activities...');
-    fetchActivities(token).then(acts => {
-      activitiesData = acts;
-      renderDashboard(athleteName);
-      show('dashboard-screen');
-      hideLoading();
-      generateAIInsight();
-    }).catch(e => {
-      hideLoading();
-      alert('Could not load activities: ' + e.message);
-    });
+    localStorage.setItem('strava_athlete', name);
+    window.history.replaceState({},'','/');
+    showLoading('Fetching all your activities...','This may take a moment for large histories');
+    try {
+      activitiesData = await fetchAllActivities(token);
+      renderAll(name); show('dashboard-screen'); hideLoading();
+      generateAIInsight(); generateRecommendations();
+    } catch(e) { hideLoading(); alert('Could not load activities: '+e.message); }
     return;
   }
 
-  // Returning user with stored token
-  const savedToken = localStorage.getItem('strava_token');
-  const savedAthlete = localStorage.getItem('strava_athlete') || 'Athlete';
-  if (savedToken) {
-    showLoading('Loading your data...');
-    fetchActivities(savedToken).then(acts => {
-      activitiesData = acts;
-      renderDashboard(savedAthlete);
-      show('dashboard-screen');
-      hideLoading();
-      generateAIInsight();
-    }).catch(() => {
-      hideLoading();
-      localStorage.removeItem('strava_token');
-    });
+  const saved = localStorage.getItem('strava_token');
+  const savedName = localStorage.getItem('strava_athlete')||'Athlete';
+  if (saved) {
+    showLoading('Loading your data...','Fetching activities');
+    try {
+      activitiesData = await fetchAllActivities(saved);
+      renderAll(savedName); show('dashboard-screen'); hideLoading();
+      generateAIInsight(); generateRecommendations();
+    } catch { hideLoading(); localStorage.removeItem('strava_token'); }
   }
 })();
 </script>
