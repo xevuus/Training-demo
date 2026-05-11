@@ -819,11 +819,11 @@ function predictTimeFromVDOT(vdot,distM){
   // 5K-10K: sweet spot, no adjustment
   // Long distances: fatigue accumulates more than the formula assumes, pull back
   let factor=1.0;
-  if(distM<=400)        factor=0.84;
-  else if(distM<=800)   factor=0.87;
-  else if(distM<=1500)  factor=0.92;
-  else if(distM<=1609)  factor=0.925;
-  else if(distM<=3000)  factor=0.96;
+  if(distM<=400)        factor=0.94;
+  else if(distM<=800)   factor=0.96;
+  else if(distM<=1500)  factor=0.97;
+  else if(distM<=1609)  factor=0.975;
+  else if(distM<=3000)  factor=0.985;
   else if(distM<=5000)  factor=1.0;
   else if(distM<=10000) factor=1.0;
   else if(distM<=15000) factor=1.015;
@@ -1319,7 +1319,7 @@ function filterCourses(type,btn){
 }
 
 function renderCourseGrid(){
-  if(typeof STR_COURSES==='undefined')return;
+  if(typeof STR_COURSES==='undefined'){setTimeout(renderCourseGrid,100);return;}
   const all=[...STR_COURSES.xc,...STR_COURSES.road];
   const filtered=courseFilter==='all'?all:courseFilter==='xc'?STR_COURSES.xc:STR_COURSES.road;
   $('course-grid').innerHTML=filtered.map(c=>`
@@ -1359,6 +1359,7 @@ function renderMiniProfile(course){
 }
 
 function selectCourse(id){
+  if(typeof STR_COURSES==='undefined'){alert('Course data still loading, please try again.');return;}
   const all=[...STR_COURSES.xc,...STR_COURSES.road];
   selectedCourse=all.find(c=>c.id===id);
   if(!selectedCourse)return;
@@ -1417,7 +1418,8 @@ function renderCourseDetail(c){
   const dists=c.distances||[c.distance];
   if(!vdot){$('cd-preds').innerHTML='<div style="color:var(--muted);font-size:0.8rem;grid-column:1/-1;">Connect Strava to see your predicted times on this course.</div>';return;}
   $('cd-preds').innerHTML=dists.map(d=>{
-    const factor=c.timeFactor?.(d)||c.timeFactor||1.0;
+    const tf=c.timeFactor;
+    const factor=typeof tf==='function'?tf(d):typeof tf==='object'&&tf!==null?(tf[d]||1.0):tf||1.0;
     const flatSecs=predictTimeFromVDOT(vdot,d);
     const courseSecs=flatSecs*factor;
     const diffSecs=courseSecs-flatSecs;
@@ -1434,7 +1436,7 @@ function renderCourseDetail(c){
 
 // ── RECOMMENDATIONS ──
 function renderRecsTab(){
-  if(typeof STR_RECOMMENDATIONS==='undefined')return;
+  if(typeof STR_RECOMMENDATIONS==='undefined'){setTimeout(renderRecsTab,100);return;}
   const ph=detectPhase(activitiesData);
   const phase=ph.phase;
   $('recs-phase-label').textContent=`Recommendations for: ${phase} phase`;
