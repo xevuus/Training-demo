@@ -240,6 +240,76 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .zone-box-name{font-size:0.62rem;font-family:'DM Mono',monospace;margin-bottom:3px;}
 .zone-box-range{font-size:0.75rem;font-weight:600;font-family:'DM Mono',monospace;}
 .save-notice{font-size:0.75rem;color:var(--green);margin-top:0.5rem;display:none;font-family:'DM Mono',monospace;}
+
+/* COURSE PREDICTOR */
+.course-filter-row{display:flex;gap:8px;margin-bottom:1.2rem;flex-wrap:wrap;}
+.course-filter-btn{padding:6px 14px;font-size:0.75rem;font-family:'DM Mono',monospace;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--muted);border-radius:8px;transition:all 0.15s;}
+.course-filter-btn.active{background:var(--orange);color:white;border-color:var(--orange);}
+.course-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
+@media(max-width:640px){.course-grid{grid-template-columns:1fr;}}
+.course-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color 0.15s;}
+.course-card:hover{border-color:rgba(252,76,2,0.3);}
+.course-card.selected{border-color:var(--orange);}
+.course-card-header{padding:1rem 1.1rem 0.6rem;}
+.course-card-name{font-size:0.95rem;font-weight:600;margin-bottom:2px;}
+.course-card-loc{font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;}
+.course-card-body{padding:0 1.1rem 1rem;}
+.course-difficulty{display:flex;gap:3px;margin:6px 0 8px;}
+.diff-dot{width:8px;height:8px;border-radius:50%;background:var(--surface2);}
+.diff-dot.filled{background:var(--orange);}
+.course-svg-wrap{height:60px;width:100%;margin-bottom:8px;}
+.course-svg{width:100%;height:100%;}
+.course-dist-chips{display:flex;gap:4px;flex-wrap:wrap;}
+.dist-chip{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 8px;font-size:0.62rem;font-family:'DM Mono',monospace;color:var(--muted);}
+.course-detail{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1.5rem;display:none;}
+.course-detail.show{display:block;}
+.course-detail-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:1rem;}
+.course-detail-title{font-size:1.1rem;font-weight:600;}
+.course-detail-loc{font-size:0.75rem;color:var(--muted);font-family:'DM Mono',monospace;margin-top:2px;}
+.course-detail-svg-wrap{height:130px;width:100%;margin-bottom:1rem;background:var(--surface2);border-radius:10px;overflow:hidden;padding:8px;}
+.course-detail-svg{width:100%;height:100%;}
+.course-stats-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:1rem;}
+.course-stat-val{font-size:1rem;font-weight:600;font-family:'DM Mono',monospace;}
+.course-stat-lbl{font-size:0.62rem;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;}
+.course-prediction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:1rem;}
+.course-pred-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem;}
+.course-pred-dist{font-size:0.66rem;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:3px;}
+.course-pred-time{font-size:1rem;font-weight:600;}
+.course-pred-diff{font-size:0.68rem;margin-top:2px;font-family:'DM Mono',monospace;}
+.course-pred-diff.slower{color:var(--red);}
+.course-pred-diff.faster{color:var(--green);}
+
+/* RECOMMENDATIONS */
+.recs-section{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1.2rem;}
+.recs-section-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;cursor:pointer;user-select:none;}
+.recs-section-icon{font-size:1.4rem;}
+.recs-section-title{font-size:0.9rem;font-weight:600;flex:1;}
+.recs-section-badge{background:var(--orange-dim);color:var(--orange);border-radius:6px;padding:2px 10px;font-size:0.65rem;font-family:'DM Mono',monospace;}
+.recs-section-toggle{font-size:0.7rem;color:var(--muted);font-family:'DM Mono',monospace;}
+.recs-section-body.collapsed{display:none;}
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:600px){.recs-grid{grid-template-columns:1fr;}}
+.rec-item-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;}
+.rec-item-name{font-size:0.9rem;font-weight:600;margin-bottom:3px;}
+.rec-item-meta{font-size:0.7rem;color:var(--orange);font-family:'DM Mono',monospace;margin-bottom:6px;}
+.rec-item-cue{font-size:0.75rem;color:var(--muted);line-height:1.5;}
+.stretch-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+@media(max-width:640px){.stretch-grid{grid-template-columns:1fr 1fr;}}
+.stretch-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.8rem;}
+.stretch-name{font-size:0.82rem;font-weight:600;margin-bottom:2px;}
+.stretch-target{font-size:0.65rem;color:var(--orange);font-family:'DM Mono',monospace;margin-bottom:4px;}
+.stretch-dur{font-size:0.65rem;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:5px;}
+.stretch-cue{font-size:0.72rem;color:var(--muted);line-height:1.45;}
+.warmup-steps{display:flex;flex-direction:column;gap:8px;}
+.warmup-step{display:flex;gap:12px;align-items:flex-start;padding:0.7rem 0.9rem;background:var(--surface2);border-radius:8px;}
+.warmup-step-num{width:22px;height:22px;border-radius:50%;background:var(--orange-dim);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-family:'DM Mono',monospace;flex-shrink:0;font-weight:600;}
+.warmup-step-info{flex:1;}
+.warmup-step-name{font-size:0.85rem;font-weight:600;margin-bottom:2px;}
+.warmup-step-dur{font-size:0.68rem;color:var(--orange);font-family:'DM Mono',monospace;margin-bottom:3px;}
+.warmup-step-cue{font-size:0.73rem;color:var(--muted);line-height:1.45;}
+.warmup-type-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;}
+.warmup-type-btn{padding:5px 12px;font-size:0.72rem;font-family:'DM Mono',monospace;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--muted);border-radius:8px;}
+.warmup-type-btn.active{background:var(--orange);color:white;border-color:var(--orange);}
 </style>
 </head>
 <body>
@@ -283,7 +353,9 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
         <button class="nav-tab active" onclick="switchTab('overview',this)">Overview</button>
         <button class="nav-tab" onclick="switchTab('predictions',this)">Predictions</button>
         <button class="nav-tab" onclick="switchTab('performance',this)">Performance</button>
+        <button class="nav-tab" onclick="switchTab('courses',this)">Courses</button>
         <button class="nav-tab" onclick="switchTab('planner',this)">Race Planner</button>
+        <button class="nav-tab" onclick="switchTab('recs',this)">Training Tips</button>
         <button class="nav-tab" onclick="switchTab('activities',this)">Activities</button>
         <button class="nav-tab" onclick="switchTab('settings',this)">Settings</button>
       </div>
@@ -480,6 +552,125 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
           </div>
           <div class="phase-timeline" id="phase-timeline"></div>
           <div class="planner-insights" id="planner-insights"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURSE PREDICTOR TAB -->
+    <div class="tab-panel" id="tab-courses">
+      <div class="course-filter-row">
+        <button class="course-filter-btn active" onclick="filterCourses('all',this)">All Courses</button>
+        <button class="course-filter-btn" onclick="filterCourses('xc',this)">XC Courses</button>
+        <button class="course-filter-btn" onclick="filterCourses('road',this)">Road Races</button>
+      </div>
+      <div class="course-detail" id="course-detail">
+        <div class="course-detail-header">
+          <div>
+            <div class="course-detail-title" id="cd-name">—</div>
+            <div class="course-detail-loc" id="cd-loc">—</div>
+          </div>
+          <div class="course-stats-row" id="cd-stats"></div>
+        </div>
+        <div class="course-detail-svg-wrap">
+          <svg class="course-detail-svg" id="cd-svg" viewBox="0 0 700 110" preserveAspectRatio="none"></svg>
+        </div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:1.65;margin-bottom:1rem;" id="cd-desc"></div>
+        <div style="font-size:0.68rem;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:0.5rem;">YOUR PREDICTED TIMES ON THIS COURSE</div>
+        <div class="course-prediction-grid" id="cd-preds"></div>
+      </div>
+      <div class="course-grid" id="course-grid"></div>
+    </div>
+
+    <!-- RECOMMENDATIONS TAB -->
+    <div class="tab-panel" id="tab-recs">
+      <div style="font-size:0.75rem;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:1.2rem;" id="recs-phase-label">Recommendations based on your current training phase</div>
+
+      <!-- SUPPLEMENTS -->
+      <div class="recs-section">
+        <div class="recs-section-header" onclick="toggleRecs('supp')">
+          <div class="recs-section-icon">💊</div>
+          <div class="recs-section-title">Supplements</div>
+          <div class="recs-section-badge" id="supp-badge">Phase-specific</div>
+          <div class="recs-section-toggle" id="supp-toggle">▼</div>
+        </div>
+        <div class="recs-section-body" id="recs-supp">
+          <div class="recs-grid" id="supp-grid"></div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:1rem;line-height:1.6;">⚠️ Always consult a doctor before starting supplements, especially iron. These are general guidelines for healthy adult runners.</div>
+        </div>
+      </div>
+
+      <!-- STRENGTH -->
+      <div class="recs-section">
+        <div class="recs-section-header" onclick="toggleRecs('strength')">
+          <div class="recs-section-icon">🏋️</div>
+          <div class="recs-section-title">Strength Training</div>
+          <div class="recs-section-badge" id="strength-badge">Phase-specific</div>
+          <div class="recs-section-toggle" id="strength-toggle">▼</div>
+        </div>
+        <div class="recs-section-body" id="recs-strength">
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:1rem;font-family:'DM Mono',monospace;" id="strength-meta"></div>
+          <div class="recs-grid" id="strength-grid"></div>
+        </div>
+      </div>
+
+      <!-- YOGA -->
+      <div class="recs-section">
+        <div class="recs-section-header" onclick="toggleRecs('yoga')">
+          <div class="recs-section-icon">🧘</div>
+          <div class="recs-section-title">Yoga for Runners</div>
+          <div class="recs-section-badge">Phase-specific</div>
+          <div class="recs-section-toggle" id="yoga-toggle">▼</div>
+        </div>
+        <div class="recs-section-body" id="recs-yoga">
+          <div class="recs-grid" id="yoga-grid"></div>
+        </div>
+      </div>
+
+      <!-- WARMUPS -->
+      <div class="recs-section">
+        <div class="recs-section-header" onclick="toggleRecs('warmup')">
+          <div class="recs-section-icon">🔥</div>
+          <div class="recs-section-title">Warmup Routines</div>
+          <div class="recs-section-badge">By workout type</div>
+          <div class="recs-section-toggle" id="warmup-toggle">▼</div>
+        </div>
+        <div class="recs-section-body" id="recs-warmup">
+          <div class="warmup-type-row">
+            <button class="warmup-type-btn active" onclick="showWarmup('easy',this)">Easy Day</button>
+            <button class="warmup-type-btn" onclick="showWarmup('track',this)">Track / Intervals</button>
+            <button class="warmup-type-btn" onclick="showWarmup('longrun',this)">Long Run</button>
+          </div>
+          <div class="warmup-steps" id="warmup-steps"></div>
+        </div>
+      </div>
+
+      <!-- COOLDOWNS -->
+      <div class="recs-section">
+        <div class="recs-section-header" onclick="toggleRecs('cooldown')">
+          <div class="recs-section-icon">❄️</div>
+          <div class="recs-section-title">Cooldown Routines</div>
+          <div class="recs-section-badge">By workout type</div>
+          <div class="recs-section-toggle" id="cooldown-toggle">▼</div>
+        </div>
+        <div class="recs-section-body" id="recs-cooldown">
+          <div class="warmup-type-row">
+            <button class="warmup-type-btn active" onclick="showCooldown('easy',this)">Easy Day</button>
+            <button class="warmup-type-btn" onclick="showCooldown('hard',this)">Post Hard Workout</button>
+          </div>
+          <div class="warmup-steps" id="cooldown-steps"></div>
+        </div>
+      </div>
+
+      <!-- STRETCHES -->
+      <div class="recs-section">
+        <div class="recs-section-header" onclick="toggleRecs('stretch')">
+          <div class="recs-section-icon">🤸</div>
+          <div class="recs-section-title">Essential Runner Stretches</div>
+          <div class="recs-section-badge">Daily</div>
+          <div class="recs-section-toggle" id="stretch-toggle">▼</div>
+        </div>
+        <div class="recs-section-body" id="recs-stretch">
+          <div class="stretch-grid" id="stretch-grid"></div>
         </div>
       </div>
     </div>
@@ -1115,6 +1306,234 @@ async function askAI(){
     catch{hideLoading();localStorage.removeItem('strava_token');}
   }
 })();
+
+// ── COURSE PREDICTOR ──
+let selectedCourse=null;
+let courseFilter='all';
+
+function filterCourses(type,btn){
+  courseFilter=type;
+  document.querySelectorAll('.course-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCourseGrid();
+}
+
+function renderCourseGrid(){
+  if(typeof STR_COURSES==='undefined')return;
+  const all=[...STR_COURSES.xc,...STR_COURSES.road];
+  const filtered=courseFilter==='all'?all:courseFilter==='xc'?STR_COURSES.xc:STR_COURSES.road;
+  $('course-grid').innerHTML=filtered.map(c=>`
+    <div class="course-card${selectedCourse&&selectedCourse.id===c.id?' selected':''}" onclick="selectCourse('${c.id}')">
+      <div class="course-card-header">
+        <div class="course-card-name">${c.name}</div>
+        <div class="course-card-loc">${c.location}</div>
+      </div>
+      <div class="course-card-body">
+        <div class="course-difficulty">${Array.from({length:5},(_,i)=>`<div class="diff-dot${i<c.difficulty?' filled':''}"></div>`).join('')}</div>
+        <div class="course-svg-wrap">${renderMiniProfile(c)}</div>
+        <div class="course-dist-chips">${(c.distances||[c.distance]).map(d=>`<span class="dist-chip">${formatDist(d)}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+}
+
+function formatDist(m){
+  if(m===42195)return'Marathon';
+  if(m===21097||m===21097.5)return'Half';
+  if(m>=1000)return(m/1000).toFixed(0)+'K';
+  return m+'m';
+}
+
+function renderMiniProfile(course){
+  const pts=course.profile;
+  if(!pts||!pts.length)return'<svg viewBox="0 0 100 30"><line x1="0" y1="15" x2="100" y2="15" stroke="#4a9eff" stroke-width="1.5"/></svg>';
+  const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);
+  const minX=Math.min(...xs),maxX=Math.max(...xs);
+  const minY=Math.min(...ys),maxY=Math.max(...ys);
+  const rangeY=Math.max(maxY-minY,1);
+  const W=100,H=30,pad=3;
+  const sx=x=>pad+(x-minX)/(maxX-minX)*(W-pad*2);
+  const sy=y=>H-pad-(y-minY)/rangeY*(H-pad*2);
+  const path=pts.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  const fill=pts.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ')+` L${sx(maxX).toFixed(1)},${H} L${sx(minX).toFixed(1)},${H} Z`;
+  return`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${fill}" fill="rgba(74,158,255,0.08)"/><path d="${path}" fill="none" stroke="#4a9eff" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+}
+
+function selectCourse(id){
+  const all=[...STR_COURSES.xc,...STR_COURSES.road];
+  selectedCourse=all.find(c=>c.id===id);
+  if(!selectedCourse)return;
+  renderCourseGrid();
+  renderCourseDetail(selectedCourse);
+  $('course-detail').classList.add('show');
+  $('course-detail').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderCourseDetail(c){
+  $('cd-name').textContent=c.name;
+  $('cd-loc').textContent=c.location+' · '+(c.type==='xc'?'Cross Country':'Road Race')+' · '+c.surface;
+
+  // Stats
+  const pts=c.profile;
+  const ys=pts.map(p=>p[1]);
+  const gain=Math.max(0,...ys.map((_,i)=>i>0?Math.max(0,ys[i]-ys[i-1]):0).reduce((a,v,i)=>{a.push((a[i-1]||0)+v);return a;},[0]));
+  const totalGain=ys.reduce((s,v,i)=>i>0&&v>ys[i-1]?s+(v-ys[i-1]):s,0);
+  const totalLoss=ys.reduce((s,v,i)=>i>0&&v<ys[i-1]?s+(ys[i-1]-v):s,0);
+  const diffLabels=['','Easy','Moderate-Easy','Moderate','Moderate-Hard','Hard / Hilly'];
+  $('cd-stats').innerHTML=`
+    <div><div class="course-stat-val">${totalGain.toFixed(0)}m</div><div class="course-stat-lbl">Elevation gain</div></div>
+    <div><div class="course-stat-val">${totalLoss.toFixed(0)}m</div><div class="course-stat-lbl">Elevation loss</div></div>
+    <div><div class="course-stat-val">${diffLabels[c.difficulty]||'—'}</div><div class="course-stat-lbl">Difficulty</div></div>`;
+
+  // Big SVG profile
+  const minX=Math.min(...pts.map(p=>p[0])),maxX=Math.max(...pts.map(p=>p[0]));
+  const minY=Math.min(...ys)-2,maxY=Math.max(...ys)+2;
+  const rangeY=Math.max(maxY-minY,1);
+  const W=700,H=100,padL=8,padR=8,padT=8,padB=20;
+  const sx=x=>padL+(x-minX)/(maxX-minX)*(W-padL-padR);
+  const sy=y=>padT+(maxY-y)/rangeY*(H-padT-padB);
+  const path=pts.map((p,i)=>`${i===0?'M':'L'}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join(' ');
+  const fill=path+` L${sx(maxX).toFixed(1)},${H-padB} L${sx(minX).toFixed(1)},${H-padB} Z`;
+  // Grid lines
+  let svgContent='';
+  const ySteps=4;
+  for(let i=0;i<=ySteps;i++){
+    const v=minY+(maxY-minY)*i/ySteps;
+    const y=sy(v).toFixed(1);
+    svgContent+=`<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;
+    svgContent+=`<text x="${padL-2}" y="${parseFloat(y)+3}" fill="#7a7875" font-size="7" text-anchor="end" font-family="DM Mono">${Math.round(v)}m</text>`;
+  }
+  // Distance labels
+  const distMarks=c.distances||[c.distance];
+  distMarks.forEach(d=>{
+    if(d<=maxX){const x=sx(d).toFixed(1);svgContent+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${H-padB}" stroke="rgba(252,76,2,0.2)" stroke-width="1" stroke-dasharray="3,3"/>`;svgContent+=`<text x="${x}" y="${H-5}" fill="#FC4C02" font-size="7" text-anchor="middle" font-family="DM Mono">${formatDist(d)}</text>`;}
+  });
+  svgContent+=`<path d="${fill}" fill="rgba(74,158,255,0.1)"/><path d="${path}" fill="none" stroke="#4a9eff" stroke-width="2" stroke-linejoin="round"/>`;
+  $('cd-svg').innerHTML=svgContent;
+  $('cd-desc').innerHTML=`${c.description}<br><br><strong style="color:var(--text);">Notable meets:</strong> <span style="color:var(--muted);">${c.notable}</span>`;
+
+  // Predictions
+  const runs=activitiesData.filter(a=>['Run','VirtualRun'].includes(a.type||a.sport_type));
+  const vdot=getBestVDOT(runs.filter(r=>r.distance>2000&&r.moving_time>480));
+  const dists=c.distances||[c.distance];
+  if(!vdot){$('cd-preds').innerHTML='<div style="color:var(--muted);font-size:0.8rem;grid-column:1/-1;">Connect Strava to see your predicted times on this course.</div>';return;}
+  $('cd-preds').innerHTML=dists.map(d=>{
+    const factor=c.timeFactor?.(d)||c.timeFactor||1.0;
+    const flatSecs=predictTimeFromVDOT(vdot,d);
+    const courseSecs=flatSecs*factor;
+    const diffSecs=courseSecs-flatSecs;
+    const sign=diffSecs>=0?'+':'-';
+    const diffStr=`${sign}${secToHMS(Math.abs(diffSecs))} vs flat`;
+    const slower=diffSecs>0;
+    return`<div class="course-pred-card">
+      <div class="course-pred-dist">${formatDist(d)}</div>
+      <div class="course-pred-time">${secToHMS(courseSecs)}</div>
+      <div class="course-pred-diff ${slower?'slower':'faster'}">${diffStr}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── RECOMMENDATIONS ──
+function renderRecsTab(){
+  if(typeof STR_RECOMMENDATIONS==='undefined')return;
+  const ph=detectPhase(activitiesData);
+  const phase=ph.phase;
+  $('recs-phase-label').textContent=`Recommendations for: ${phase} phase`;
+
+  // Supplements
+  const supps=STR_RECOMMENDATIONS.supplements[phase]||STR_RECOMMENDATIONS.supplements['Base Building'];
+  $('supp-badge').textContent=phase;
+  $('supp-grid').innerHTML=supps.map(s=>`<div class="rec-item-card">
+    <div class="rec-item-name">${s.name}</div>
+    <div class="rec-item-meta">${s.dose} · ${s.timing}</div>
+    <div class="rec-item-cue">${s.why}</div>
+  </div>`).join('');
+
+  // Strength
+  const str=STR_RECOMMENDATIONS.strength[phase]||STR_RECOMMENDATIONS.strength['Base Building'];
+  $('strength-badge').textContent=phase;
+  $('strength-meta').textContent=`${str.frequency} · Focus: ${str.focus}`;
+  $('strength-grid').innerHTML=str.workouts.map(w=>`<div class="rec-item-card">
+    <div class="rec-item-name">${w.name}</div>
+    <div class="rec-item-meta">${w.sets}</div>
+    <div class="rec-item-cue">${w.cue}</div>
+  </div>`).join('');
+
+  // Yoga
+  const yoga=STR_RECOMMENDATIONS.yoga[phase]||STR_RECOMMENDATIONS.yoga['Base Building'];
+  $('yoga-grid').innerHTML=yoga.map(y=>`<div class="rec-item-card">
+    <div class="rec-item-name">${y.name}</div>
+    <div class="rec-item-meta">${y.duration}</div>
+    <div class="rec-item-cue">${y.cue}</div>
+  </div>`).join('');
+
+  // Warmup (default easy)
+  showWarmup('easy',document.querySelector('.warmup-type-btn'));
+
+  // Cooldown (default easy)
+  showCooldown('easy',document.querySelector('.warmup-type-btn'));
+
+  // Stretches
+  $('stretch-grid').innerHTML=STR_RECOMMENDATIONS.stretches.map(s=>`<div class="stretch-card">
+    <div class="stretch-name">${s.name}</div>
+    <div class="stretch-target">${s.target}</div>
+    <div class="stretch-dur">${s.duration}</div>
+    <div class="stretch-cue">${s.cue}</div>
+  </div>`).join('');
+}
+
+function showWarmup(type,btn){
+  if(typeof STR_RECOMMENDATIONS==='undefined')return;
+  document.querySelectorAll('.warmup-type-btn').forEach(b=>b&&b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const w=STR_RECOMMENDATIONS.warmups[type];
+  if(!w)return;
+  $('warmup-steps').innerHTML=`<div style="font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:0.6rem;">${w.name} · ${w.duration}</div>`+
+    w.steps.map((s,i)=>`<div class="warmup-step">
+      <div class="warmup-step-num">${i+1}</div>
+      <div class="warmup-step-info">
+        <div class="warmup-step-name">${s.name}</div>
+        <div class="warmup-step-dur">${s.duration}</div>
+        <div class="warmup-step-cue">${s.cue}</div>
+      </div>
+    </div>`).join('');
+}
+
+function showCooldown(type,btn){
+  if(typeof STR_RECOMMENDATIONS==='undefined')return;
+  // Fix button highlighting for cooldown section
+  const cooldownBtns=document.querySelectorAll('#recs-cooldown .warmup-type-btn');
+  cooldownBtns.forEach(b=>b.classList.remove('active'));
+  if(btn&&btn.closest('#recs-cooldown'))btn.classList.add('active');
+  else if(cooldownBtns.length)cooldownBtns[0].classList.add('active');
+  const c=STR_RECOMMENDATIONS.cooldowns[type];
+  if(!c)return;
+  $('cooldown-steps').innerHTML=`<div style="font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:0.6rem;">${c.name} · ${c.duration}</div>`+
+    c.steps.map((s,i)=>`<div class="warmup-step">
+      <div class="warmup-step-num">${i+1}</div>
+      <div class="warmup-step-info">
+        <div class="warmup-step-name">${s.name}</div>
+        <div class="warmup-step-dur">${s.duration}</div>
+        <div class="warmup-step-cue">${s.cue}</div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleRecs(id){
+  const body=$(`recs-${id}`);
+  const toggle=$(`${id}-toggle`);
+  if(!body)return;
+  body.classList.toggle('collapsed');
+  if(toggle)toggle.textContent=body.classList.contains('collapsed')?'▶':'▼';
+}
+
+// Hook into switchTab to lazy-render new tabs
+const _origSwitchTab=switchTab;
+function switchTab(name,btn){
+  _origSwitchTab(name,btn);
+  if(name==='courses')renderCourseGrid();
+  if(name==='recs')renderRecsTab();
+}
 </script>
+<script src="/courses.js"></script>
 </body>
 </html>
