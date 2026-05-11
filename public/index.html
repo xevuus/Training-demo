@@ -1527,12 +1527,14 @@ function toggleRecs(id){
 }
 
 // Hook into switchTab to lazy-render new tabs
-const _origSwitchTab=switchTab;
-function switchTab(name,btn){
-  _origSwitchTab(name,btn);
-  if(name==='courses')renderCourseGrid();
-  if(name==='recs')renderRecsTab();
-}
+// Lazy-render new tabs on first visit
+document.querySelectorAll('.nav-tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const name=btn.getAttribute('onclick').match(/'(\w+)'/)?.[1];
+    if(name==='courses')renderCourseGrid();
+    if(name==='recs')renderRecsTab();
+  });
+});
 </script>
 <script src="/courses.js"></script>
 </body>
