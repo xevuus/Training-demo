@@ -20,7 +20,7 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(252,76,2,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(252,76,2,0.04) 1px,transparent 1px);background-size:48px 48px;z-index:0;}
 .bg-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(252,76,2,0.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;}
 .connect-card{position:relative;z-index:1;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3rem;max-width:420px;width:100%;text-align:center;}
-.strava-logo{width:56px;height:56px;background:var(--orange);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:22px;font-weight:700;color:white;font-family:'DM Mono',monospace;}
+.strava-logo{width:56px;height:56px;background:var(--white);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:22px;font-weight:700;color:rgb(234, 0, 255);font-family:'DM Mono',monospace;}
 .connect-card h1{font-size:1.6rem;font-weight:600;margin-bottom:0.5rem;}
 .connect-card>p{font-size:0.88rem;color:var(--muted);margin-bottom:2rem;line-height:1.6;}
 .feature-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:2rem;}
@@ -325,13 +325,13 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
   <div class="bg-grid"></div><div class="bg-glow"></div>
   <div class="connect-card">
     <div class="strava-logo">S/</div>
-    <h1>Training Analyzer</h1>
-    <p>Connect your Strava account for AI-powered analysis of your performance, training load, and race predictions.</p>
+    <h1>STR</h1>
+    <p>Connect your Strava account for analysis of your performance, training load, and race predictions.</p>
     <div class="feature-pills">
       <span class="pill">📈 VO2 over time</span>
       <span class="pill">🏁 Full race predictions</span>
       <span class="pill">🎯 Race goal planner</span>
-      <span class="pill">🤖 AI coaching</span>
+      <span class="pill">📊 Data Analysis</span>
     </div>
     <div class="error-box" id="error-box"></div>
     <button class="btn-connect" onclick="connectStrava()">Connect with Strava →</button>
