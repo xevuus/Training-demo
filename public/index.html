@@ -13,11 +13,26 @@
   --border:rgba(81,52,83,0.25);--text:rgb(235,225,235);--muted:rgb(140,120,142);
   --green:rgb(130,195,160);--blue:rgb(100,160,200);--amber:rgb(200,160,90);--red:rgb(210,120,100);--purple:rgb(200,160,90);
 }
-body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;position:relative;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(200,180,210,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(200,180,210,0.06) 1px,transparent 1px);background-size:48px 48px;animation:gridwave 8s ease-in-out infinite;}
 .screen{display:none;}.screen.active{display:block;}
 #connect-screen{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:2rem;position:relative;overflow:hidden;}
 #connect-screen.active{display:flex;}
-.bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(252,76,2,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(252,76,2,0.04) 1px,transparent 1px);background-size:48px 48px;z-index:0;}
+.bg-grid{position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(200, 180, 210, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 180, 210, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridwave 8s ease-in-out infinite;
+}
+
+@keyframes gridwave {
+  0%   { background-position: 0px 0px, 0px 0px; }
+  25%  { background-position: 12px 20px, 12px 20px; }
+  50%  { background-position: 24px 8px, 24px 8px; }
+  75%  { background-position: 8px 30px, 8px 30px; }
+  100% { background-position: 0px 0px, 0px 0px; }
+}
 .bg-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(252,76,2,0.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;}
 .connect-card{position:relative;z-index:1;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3rem;max-width:420px;width:100%;text-align:center;}
 .strava-logo{width:65px;height:65px;background:var(--white);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:22px;font-weight:700;color:rgb(81, 52, 83);font-family:'DM Mono',monospace;}
@@ -51,7 +66,11 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 .nav-tabs{display:flex;gap:2px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:3px;flex-wrap:wrap;}
 .nav-tab{padding:6px 12px;font-size:0.76rem;font-family:'DM Mono',monospace;cursor:pointer;border:none;background:transparent;color:var(--muted);border-radius:7px;transition:all 0.15s;white-space:nowrap;}
 .nav-tab.active{background:var(--surface);color:var(--text);}
-.dashboard-body{padding:1.5rem;max-width:1100px;margin:0 auto;}
+.dashboard-body{padding: 1.5rem; 
+  max-width: 1100px; 
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;}
 .tab-panel{display:none;}.tab-panel.active{display:block;}
 .demo-notice{background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:8px 14px;font-size:0.75rem;color:var(--amber);margin-bottom:1.2rem;font-family:'DM Mono',monospace;}
 .status-banner{border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border:1px solid;}
