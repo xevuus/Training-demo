@@ -11,7 +11,7 @@
   --orange:rgb(81, 52, 83);--orange-dim:rgba(81,52,83,0.15);
   --bg:rgb(8,7,10);--surface: rgb(22,17,23);--surface2:rgb(32,25,33);
   --border:rgba(81,52,83,0.25);--text:rgb(235,225,235);--muted:rgb(140,120,142);
-  --green:#27c96f;--blue:#4a9eff;--amber:#f5a623;--red:#e53935;--purple:rgb(200,160,90);
+  --green:rgb(130,195,160);--blue:rgb(100,160,200);--amber:rgb(200,160,90);--red:rgb(210,120,100);--purple:rgb(200,160,90);
 }
 body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 .screen{display:none;}.screen.active{display:block;}
@@ -98,7 +98,7 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
 
 /* VDOT HEADER */
 .vdot-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem;flex-wrap:wrap;gap:8px;}
-.vdot-score{background:var(--orange-dim);border:1px solid rgba(252,76,2,0.2);border-radius:10px;padding:6px 14px;text-align:center;}
+.vdot-score{background:var(--orange-dim);border:1px solid rgba(81,52,83,0.2);border-radius:10px;padding:6px 14px;text-align:center;}
 .vdot-val{font-size:1.4rem;font-weight:700;color:var(--orange);font-family:'DM Mono',monospace;}
 .vdot-lbl{font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;}
 
@@ -402,7 +402,7 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-he
           <div style="display:flex;gap:12px;margin-top:8px;align-items:center;">
             <div style="width:10px;height:10px;background:var(--orange);border-radius:2px;"></div>
             <span style="font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;">Current</span>
-            <div style="width:10px;height:10px;background:rgba(168,85,247,0.5);border-radius:2px;margin-left:8px;"></div>
+            <div style="width:10px;height:10px;background:rgb(200,160,90);border-radius:2px;margin-left:8px;"></div>
             <span style="font-size:0.6rem;color:var(--muted);font-family:'DM Mono',monospace;">Peak week</span>
           </div>
         </div>
