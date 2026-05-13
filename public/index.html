@@ -11,10 +11,10 @@
   --orange:rgb(81, 52, 83);--orange-dim:rgba(81,52,83,0.15);
   --bg:rgb(8,7,10);--surface: rgb(22,17,23);--surface2:rgb(32,25,33);
   --border:rgba(81,52,83,0.25);--text:rgb(235,225,235);--muted:rgb(140,120,142);
-  --green:rgb(130,195,160);--blue:rgb(100,160,200);--amber:rgb(200,160,90);--red:rgb(210,120,100);--purple:rgb(200,160,90);
+  --green:rgb(130,195,160);--blue:rgb(100,160,200);--amber:rgb(200,160,90);--red:rgb(210,120,100);--purple:rgb(81,52,83);
 }
 body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;position:relative;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(200,180,210,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(200,180,210,0.06) 1px,transparent 1px);background-size:48px 48px;animation:gridwave 8s ease-in-out infinite;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(217, 203, 224, 0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(200,180,210,0.06) 1px,transparent 1px);background-size:48px 48px;animation:gridwave 8s ease-in-out infinite;animation: gridwave 12s ease-in-out infinite;}
 .screen{display:none;}.screen.active{display:block;}
 #connect-screen{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:2rem;position:relative;overflow:hidden;}
 #connect-screen.active{display:flex;}
@@ -27,11 +27,13 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 }
 
 @keyframes gridwave {
-  0%   { background-position: 0px 0px, 0px 0px; }
-  25%  { background-position: 12px 20px, 12px 20px; }
-  50%  { background-position: 24px 8px, 24px 8px; }
-  75%  { background-position: 8px 30px, 8px 30px; }
-  100% { background-position: 0px 0px, 0px 0px; }
+  0%   { background-position: 0px 0px, 0px 0px; transform: skewY(0deg); }
+  15%  { background-position: 24px 40px, 24px 40px; transform: skewY(0.4deg); }
+  30%  { background-position: 48px 20px, 48px 20px; transform: skewY(0deg); }
+  45%  { background-position: 32px 56px, 32px 56px; transform: skewY(-0.4deg); }
+  60%  { background-position: 16px 32px, 16px 32px; transform: skewY(0deg); }
+  75%  { background-position: 40px 64px, 40px 64px; transform: skewY(0.3deg); }
+  100% { background-position: 0px 0px, 0px 0px; transform: skewY(0deg); }
 }
 .bg-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(252,76,2,0.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;}
 .connect-card{position:relative;z-index:1;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3rem;max-width:420px;width:100%;text-align:center;}
