@@ -68,6 +68,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .nav-tabs{display:flex;gap:2px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:3px;flex-wrap:wrap;}
 .nav-tab{padding:6px 12px;font-size:0.76rem;font-family:'DM Mono',monospace;cursor:pointer;border:none;background:transparent;color:var(--muted);border-radius:7px;transition:all 0.15s;white-space:nowrap;}
 .nav-tab.active{background:var(--surface);color:var(--text);}
+.nav-tabs.hidden{display:none;}
 .dashboard-body{padding: 1.5rem; 
   max-width: 1100px; 
   margin: 0 auto;
@@ -367,7 +368,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
   <div class="topbar">
     <div class="topbar-left">
       <img src="/logo.png" style="width:32px;height:32px;border-radius:8px;object-fit:contain;" alt="STR"/>
-      <h2>Training Analyzer</h2>
+      <h2>STR</h2>
     </div>
     <div class="topbar-right">
       <div class="nav-tabs">
@@ -380,6 +381,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
         <button class="nav-tab" onclick="switchTab('activities',this)">Activities</button>
         <button class="nav-tab" onclick="switchTab('settings',this)">Settings</button>
       </div>
+      <button class="btn-sm" onclick="toggleNav()" id="nav-toggle-btn">Hide Nav</button>
       <div class="unit-toggle">
         <button class="unit-btn active" id="btn-imperial" onclick="setUnits('imperial')">MI</button>
         <button class="unit-btn" id="btn-metric" onclick="setUnits('metric')">KM</button>
@@ -1548,7 +1550,12 @@ function toggleRecs(id){
   body.classList.toggle('collapsed');
   if(toggle)toggle.textContent=body.classList.contains('collapsed')?'▶':'▼';
 }
-
+function toggleNav(){
+  const tabs=document.querySelector('.nav-tabs');
+  const btn=$('nav-toggle-btn');
+  tabs.classList.toggle('hidden');
+  btn.textContent=tabs.classList.contains('hidden')?'Show Nav':'Hide Nav';
+}
 // Hook into switchTab to lazy-render new tabs
 // Lazy-render new tabs on first visit
 document.querySelectorAll('.nav-tab').forEach(btn=>{
